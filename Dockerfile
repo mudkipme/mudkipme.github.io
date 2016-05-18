@@ -17,6 +17,8 @@ RUN npm install
 COPY config.json /usr/src/app/
 RUN git clone -b master https://github.com/mudkipme/mudkipme.github.io.git .deploy_git
 
+ADD .gitconfig /root/.gitconfig
+
 ENV NODE_ENV production
 EXPOSE 3000
 
