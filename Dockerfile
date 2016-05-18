@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y git \
     && rm -rf /var/lib/apt/lists/* \
     && npm install hexo-cli -g
 
-RUN git clone -b hexo https://github.com/mudkipme/mudkipme.github.io.git /usr/src/app
+RUN git clone -b hexo --recursive https://github.com/mudkipme/mudkipme.github.io.git /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json /usr/src/app/
