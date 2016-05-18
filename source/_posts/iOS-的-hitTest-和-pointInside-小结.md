@@ -1,7 +1,7 @@
 ---
 title: iOS 的 hitTest 和 pointInside 小结
 date: 2015-05-01 09:36:47
-tags:
+tags: ios
 ---
 
 iOS 应用中，处理和触摸有关的事件是一个必不可少的工作。UIKit 本身提供了丰富的常用 UIControl 控件，如 UIButton、UISwitch 等，使用这些控件时只需用 `addTarget:action:forControlEvents:` 或在 Storyboard 拖出一个 IBAction 就可以轻易实现事件响应；另外，各种各样的 UIGestureRecognizer 也可以为任何 UI 元素添加手势，实现所需的事件处理。

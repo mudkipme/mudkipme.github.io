@@ -1,7 +1,7 @@
 ---
 title: Letters.
 date: 2015-11-28 09:26:02
-tags:
+tags: pokemon
 ---
 
 > You’ve always been kind of a brat, Fennekin. But I’m jealous of the way you're chasing your dreams. --Lombre
