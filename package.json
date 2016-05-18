@@ -2,10 +2,15 @@
   "name": "mudkip-blog",
   "version": "0.0.0",
   "private": true,
+  "script": {
+    "start": "node server"
+  },
   "hexo": {
     "version": "3.2.0"
   },
   "dependencies": {
+    "express": "^4.13.4",
+    "express-x-hub": "^1.0.4",
     "hexo": "^3.2.0",
     "hexo-deployer-git": "^0.1.0",
     "hexo-generator-archive": "^0.1.4",

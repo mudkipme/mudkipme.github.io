@@ -6,3 +6,5 @@ node_modules/
 public/
 .deploy*/
 .Ulysses*
+/config.json
+/id_rsa
