@@ -13,8 +13,8 @@ app.post('/push', function (req, res) {
     return res.status(403).end();
   }
   exec('git pull && hexo deploy --generate', {cwd: __dirname}, function (err, stdout, stderr) {
-    if (error !== null) {
-      console.log('exec error: ' + error);
+    if (err !== null) {
+      console.log('exec error: ' + err);
     }
     console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
