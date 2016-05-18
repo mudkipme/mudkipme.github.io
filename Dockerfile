@@ -12,7 +12,6 @@ RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 RUN git clone -b hexo --recursive https://github.com/mudkipme/mudkipme.github.io.git /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
 RUN npm install
 
 COPY config.json /usr/src/app/
