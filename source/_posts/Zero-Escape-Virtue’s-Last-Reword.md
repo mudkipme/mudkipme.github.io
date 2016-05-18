@@ -1,7 +1,7 @@
 ---
 title: 'Zero Escape: Virtue’s Last Reword'
 date: 2014-06-22 13:41:01
-tags:
+tags: zero-escape
 ---
 
 一周多前终于完成了3DS上的「Zero Escape: Virtue’s Last Reword」（極限脱出ADV 善人シボウデス）这部作品。40小时的游戏时间过后，虽然很多谜题和真相解开了，但是留下的困惑和谜题更多了，希望续作（如果有的话）能够一一释疑吧。

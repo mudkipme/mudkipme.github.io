@@ -4,7 +4,7 @@ date: 2014-12-01 13:39:25
 tags: pokemon
 ---
 
-![](http://65.media.tumblr.com/0c5b56eb3988a7aedd60906883cfbe71/tumblr_nfv5ebOZfY1qgnefzo1_r3_1280.jpg)
+![][image-1]
 
 In Sootopolis City, after the end of the extreme weather event.
 
@@ -27,4 +27,8 @@ I never feel I'm ahead of you. When we met at Lilycove, I noticed your Pokédex 
 
 So...When our journey comes to a new chapter, I wish we get back to Littleroot together, and I want we understand everything about each other and our Pokémon and share our journey together.
 
-And...May we be [together forever](http://wiki.52poke.com/wiki/Together_Forever).
+And...May we be [together forever][1].
+
+[1]:	http://wiki.52poke.com/wiki/Together_Forever
+
+[image-1]:	https://65.media.tumblr.com/0c5b56eb3988a7aedd60906883cfbe71/tumblr_nfv5ebOZfY1qgnefzo1_r3_1280.jpg
