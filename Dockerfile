@@ -9,7 +9,7 @@ ADD id_rsa /root/.ssh/id_rsa
 RUN chmod 700 /root/.ssh/id_rsa
 RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
-RUN echo '2016052010' > /dev/null \
+RUN echo '2016052011' > /dev/null \
     && git clone -b hexo --recursive https://github.com/mudkipme/mudkipme.github.io.git /usr/src/app
 
 WORKDIR /usr/src/app

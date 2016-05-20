@@ -14,7 +14,7 @@ app.post('/push', function (req, res) {
   if (!req.isXHubValid()) {
     return res.status(403).end();
   }
-  if (!req.body || req.body.ref !== 'refs/heads/master') {
+  if (!req.body || req.body.ref !== 'refs/heads/hexo') {
     return res.status(204).end();
   }
   exec('git pull --recurse && git submodule update --recursive && hexo deploy --generate', {cwd: __dirname}, function (err, stdout, stderr) {
