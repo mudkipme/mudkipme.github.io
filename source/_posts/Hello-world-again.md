@@ -10,7 +10,7 @@ I chose Tumblr because it’s convenient, fun and modern in 2011. Tumblr respect
 
 This blog is now powered by Hexo, a powerful static blog framework. It’s hosted on GitHub and updated with Git. I set up a [webhook][1] to automatically deploy to GitHub Pages when I push my [hexo repository][2]. I’m also building an iOS blog workflow with Ulysses, Working Copy and Workflow. And as always, I love writing and I wish I could write more.
 
-My pervious posts is still available at [Tumblr][3]. They might be migrated here someday. :)
+My previous posts is still available at [Tumblr][3]. They might be migrated here someday. :)
 
 [1]:	https://github.com/mudkipme/mudkipme.github.io/blob/hexo/server.js
 [2]:	https://github.com/mudkipme/mudkipme.github.io
