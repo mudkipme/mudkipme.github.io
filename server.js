@@ -2,24 +2,29 @@
 
 const express = require('express');
 const xhub = require('express-x-hub');
+const bodyParser = require('body-parser');
 const exec = require('child_process').exec;
 const config = require('./config.json');
 const app = express();
 
 app.use(xhub({ secret: config.secret }));
+app.use(bodyParser.json());
 
 app.post('/push', function (req, res) {
   if (!req.isXHubValid()) {
     return res.status(403).end();
   }
-  exec('git pull && hexo deploy --generate', {cwd: __dirname}, function (err, stdout, stderr) {
+  if (!req.body || req.body.ref !== 'refs/heads/hexo') {
+    return res.status(204).end();
+  }
+  exec('git pull --recurse-submodules && git submodule update --recursive && hexo deploy --generate', {cwd: __dirname}, function (err, stdout, stderr) {
     if (err !== null) {
       console.log('exec error: ' + err);
+      return res.status(500).send(err);
     }
-    console.log('stdout: ' + stdout);
     console.log('stderr: ' + stderr);
+    res.send(stdout);
   });
-  res.send('ok');
 });
 
 const server = app.listen(config.port || 3000, function () {
