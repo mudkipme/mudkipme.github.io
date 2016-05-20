@@ -17,10 +17,10 @@ app.post('/push', function (req, res) {
   if (!req.body || req.body.ref !== 'refs/heads/hexo') {
     return res.status(204).end();
   }
-  exec('git pull --recurse && git submodule update --recursive && hexo deploy --generate', {cwd: __dirname}, function (err, stdout, stderr) {
+  exec('git pull --recurse-submodules && git submodule update --recursive && hexo deploy --generate', {cwd: __dirname}, function (err, stdout, stderr) {
     if (err !== null) {
       console.log('exec error: ' + err);
-      res.status(500).send(err);
+      return res.status(500).send(err);
     }
     console.log('stderr: ' + stderr);
     res.send(stdout);
