@@ -31,4 +31,4 @@ And...May we be [together forever][1].
 
 [1]:	http://wiki.52poke.com/wiki/Together_Forever
 
-[image-1]:	https://65.media.tumblr.com/0c5b56eb3988a7aedd60906883cfbe71/tumblr_nfv5ebOZfY1qgnefzo1_r3_1280.jpg
+[image-1]:	/images/2014/12/tumblr_nfv5ebOZfY1qgnefzo1_r3_1280.jpg
