@@ -1,6 +1,6 @@
 ---
 title: Thoughts on Trump’s visa ban
-date: 2017-01-28 18:27:04
+date: 2017-01-28 18:27:05
 tags:
 ---
 
