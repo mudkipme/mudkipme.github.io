@@ -1,0 +1,13 @@
+
+language: node_js
+branches:
+  only:
+  - hexo
+
+install: npm install
+
+before_script:
+- git config --global user.email "i@mudkip.me"
+- sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
+
+script: npm run build
