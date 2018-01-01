@@ -111,6 +111,7 @@ tags:
 * 徒然喜欢你
 * GAMERS电玩咖！
 * 狂赌之渊
+* Princess Principal
 
 ### 秋季
 
