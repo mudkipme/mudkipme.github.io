@@ -45,11 +45,11 @@ tags:
 
 * Nintendo Switch
 * iPad Pro 10.5
+* Doxie Go
 * New Nintendo 2DS XL (Poké Ball Edition, US)
 * iPhone X
 * Mophie Wireless Charging Base
 * Project FI
-* Sony WI-1000X
 
 ## Journey & Event
 
@@ -138,6 +138,8 @@ tags:
 * Transmit 5 (macOS)
 * MindNode 5 (iOS / macOS)
 * Bartender 3 (macOS)
+* MarsEdit 4 (macOS)
+* ANiUTa (iOS)
 
 ---- 
 
