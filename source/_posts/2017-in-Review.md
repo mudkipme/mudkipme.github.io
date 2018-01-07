@@ -44,12 +44,14 @@ tags:
 ## Gadgets
 
 * Nintendo Switch
-* iPad Pro 10.5
+* iPad Pro 10.5 256GB Space Gray
 * Doxie Go
 * New Nintendo 2DS XL (Poké Ball Edition, US)
-* iPhone X
+* Apple Watch Series 1 (Refurbished)
+* iPhone X 256GB Space Gray
 * Mophie Wireless Charging Base
 * Project FI
+* Sony WI-1000X
 
 ## Journey & Event
 
@@ -112,6 +114,7 @@ tags:
 * GAMERS电玩咖！
 * 狂赌之渊
 * Princess Principal
+* 捏造陷阱 -NTR-
 
 ### 秋季
 
