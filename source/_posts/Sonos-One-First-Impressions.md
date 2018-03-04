@@ -10,9 +10,12 @@ I bought a Sonos One yesterday. Here are my first impressions:
 * Sound quality is amazing. It's tremendously better than all Bluetooth speakers I have owned.
 * Alexa is great. But slower than Siri. (Possibly due to my Internet connection)
 * [Pikachu Talk](https://www.pokemon.com/us/app/pikachu-talk/) is a killing feature. It's fantastic.
-* Plex integration is fine but Plex + Alexa is unsupported. Navigating Plex library is slower than iOS apps.
+* Plex integration works fine but Plex + Alexa is unsupported. Navigating Plex library is slower than iOS apps.
 * Pocket Casts is supported but no smart speed.
 * Importing music library from SMB is great, and navigating is blazing fast.
 * No local music services when using Alexa. (Because of region settings)
 * I *can*, however, use AirPlay, by just run [airsonos](https://github.com/justintime/docker-airsonos) on my Synology NAS with Docker. It works fine but there is a 4 seconds latency. It's OK to play music or podcasts. But it can't be used to play video as the video and sound won't be in sync. AirPlay 2 is coming soon hopefully.
 * Alexa can control my Yeelight by enabling its Skill and changing the Yeelight server location to Singapore.
+* Surprisingly, Synology Audio Station can directly play to Sonos without any configuration. (like a USB speaker) It doesn’t have the latency that airsonos has. 
+* Reminders seems working despite Sonos says it wasn’t supported yet.
+* Things can be integrated with an [IFTTT Applet](https://ifttt.com/applets/ZtSApiVQ-create-things-to-dos-from-amazon-alexa).
