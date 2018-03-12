@@ -10,7 +10,7 @@ I bought a Sonos One yesterday. Here are my first impressions:
 * Sound quality is amazing. It's tremendously better than all Bluetooth speakers I have owned.
 * Alexa is great. But slower than Siri. (Possibly due to my Internet connection)
 * [Pikachu Talk](https://www.pokemon.com/us/app/pikachu-talk/) is a killing feature. It's fantastic.
-* Plex integration works fine but Plex + Alexa is unsupported. Navigating Plex library is slower than iOS apps.
+* Plex integration works fine but Plex + Alexa is unsupported. <del>Navigating Plex library is slower than iOS apps.</del> *Update: Plex for Sonos had a [recent update](http://forums.plex.tv/discussion/311856/plex-for-sonos), making everything faster.*
 * Pocket Casts is supported but no smart speed.
 * Importing music library from SMB is great, and navigating is blazing fast.
 * No local music services when using Alexa. (Because of region settings)
@@ -26,11 +26,11 @@ I was thinking about getting a good wireless speaker for a while. When Apple ann
 
 The last straw comes on Feb. 27, the Pokémon Day. When Pikachu Talk comes to Alexa devices, I can't wait to get a Sonos One. Here's my comparison of the two speakers. Some factors will change when AirPlay 2 comes to both devices, but I don't think buying decisions should be based on future uncertain promises.
 
-### When should you get a HomePod
+### When you should get a HomePod
 
 * If you are an Apple Music or iTunes Match subscriber. (I'm not because I switch App Store account frequently and it will purge downloads of Apple Music)
 * If you need it be the speaker when playing video on iPad or Apple TV.
-* If you need AirPlay and doesn't have an always-on computer at home. (Router with open source firmware, Raspberry Pis, NAS, Mac mini, etc...)
+* If you need AirPlay and don't have an always-on computer at home. (Router with open source firmware, Raspberry Pis, NAS, Mac mini, etc...)
 
 ### When you should get a Sonos One
 
