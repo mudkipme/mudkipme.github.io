@@ -10,3 +10,7 @@ creative_commons:
 
 social_icons:
   icons_only: true
+
+post_meta:
+  updated_at:
+    enable: false
