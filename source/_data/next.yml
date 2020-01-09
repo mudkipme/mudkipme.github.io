@@ -1,0 +1,12 @@
+scheme: Pisces
+
+social:
+  github: https://github.com/mudkipme || github
+  RSS: /atom.xml || rss
+
+creative_commons:
+  license: by-nc-nd
+  sidebar: true
+
+social_icons:
+  icons_only: true

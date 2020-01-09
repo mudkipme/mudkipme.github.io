@@ -5,10 +5,10 @@
 # Site
 title: Mudkip Mud Sport
 subtitle: Mudkip's Mud Sport Journal
-description: Webmaster of @52poke. Pokémon trainer. Programmer. LoveLiver. Love technology, anime, manga and video games. Never grow up.
+description: No overview available.
 author: Mudkip
 language: en
-timezone: Asia/Shanghai
+timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: next
 
 feed:
   type: atom
@@ -75,26 +75,28 @@ feed:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://__GITHUB_TOKEN__@github.com/mudkipme/mudkipme.github.io.git
+  branch: master
+  repo: https://mudkipme:__GITHUB_TOKEN__@github.com/mudkipme/mudkipme.github.io.git
 
 jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true
 
 jsonFeed:
+  spec: feed
   limit: 25

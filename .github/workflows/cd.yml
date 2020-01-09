@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+    - hexo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x 
+    - name: Install Dependencies
+      run: |
+        git submodule init
+        git submodule update
+        npm install
+    - name: Configuration
+      run: |
+        git config --global user.name "Mudkip"
+        git config --global user.email "i@mudkip.me"
+        sed -i "s/__GITHUB_TOKEN__/${{ secrets.GITHUB_PERSONAL_TOKEN }}/" _config.yml
+    - name: Deploy
+      run: |
+        npm run deploy
