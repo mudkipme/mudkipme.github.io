@@ -30,7 +30,7 @@ tags: zero-escape
 
 ### 薛定谔的猫
 
-「**Reality is shaped by what we believe reality should be.**」
+「 **Reality is shaped by what we believe reality should be.** 」
 
 在接触这作很久之前我就是薛定谔的猫的不科学解释（?）的支持者，因此从来回避体检一类的事情。本作引出了薛定谔的猫（如果外部世界是装着猫的盒子，这个密封设施是观察者），Phi线中也应用了一次这个理论（茜这次并没有被Dio所杀），最终章Alice说茜提到了解决悖论的办法就是「薛定谔的猫」，不过如何应用薛定谔的猫来拯救世界就要等到续作了。
 
