@@ -97,3 +97,7 @@ jsonContent:
     excerpt: false
     categories: false
     tags: true
+
+markdown:
+  plugins:
+    - markdown-it-footnote
