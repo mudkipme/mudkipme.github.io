@@ -6,7 +6,7 @@ tags:
 
 ## Background
 
-There are hundreds of thousands of image files are stored on [52Poké Wiki](https://52poke.wiki/). Previously, we used AWS S3 to store all these images, AWS Lambda for image processing (generating thumbnails and converting to WebP format), and two layers of cache (a container on Linode and Cloudflare CDN) for image distribution.
+Hundreds of thousands of image files are stored on [52Poké Wiki](https://52poke.wiki/). Previously, we used AWS S3 to store all these images, AWS Lambda for image processing (generating thumbnails and converting to WebP format), and two layers of cache (a container on Linode and Cloudflare CDN) for image distribution.
 
 Our monthly AWS bill increased gradually due to the growing number of images and traffic each month. Even with two layers of cache, more than 280GB of traffic defaulted to AWS S3, incurring a $20 expense every month.
 
