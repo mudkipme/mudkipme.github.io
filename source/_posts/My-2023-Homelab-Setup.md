@@ -12,7 +12,7 @@ A Homelab can start with low-power devices such as a Raspberry Pi, or with hacki
 
 Throughout 2023, I have been tinkering with my home network and computing setup, which has been both fun and rewarding.
 
-# Hardware
+## Hardware
 
 Various devices operate continuously at my home. Some were shelved last year, but there are a few newcomers worth mentioning.
 
@@ -30,13 +30,13 @@ The DeskMeet B660 also runs Proxmox VE. The integrated Iris Xe GPU is dedicated 
 
 However, I've encountered heat issues with the "Porygon" server inside the network cabinet. The CPU, cooled by a [Noctua NH-L9i-17xx](https://noctua.at/en/nh-l9i-17xx), can quickly reach 100°C during moderately intensive tasks. The SSD, even with a heatsink, often heats up to 70°C. To address this, I implemented two solutions. Firstly, I replaced the PSU fan with a [Noctua NF-A12](https://noctua.at/en/nf-a12x25-pwm), which reduced the CPU temperature by 15°C, both at idle and under load, at the cost of [injuring both my hands](https://indieweb.social/@mudkip/111661590832909428). Secondly, I installed a dedicated cabinet fan controlled by a Xiaomi Smart Plug. When the SSD temperature hits 70°C, Home Assistant activates the fan, which turns off once the temperature drops below 65°C. Ultimately, I'm quite content with the new Homelab server. It's usually quiet and energy-efficient, yet it can be exceptionally powerful when needed.
 
-# Applications and Services
+## Applications and Services
 
 In my Homelab, I run a wide array of applications, catering to various needs. This includes network applications that ensure connectivity for my devices at home and allow me to access my home network remotely. I also use note-taking apps, read-later services, home automation systems, media management services, file synchronization programs, RSS readers, as well as a git server complemented by CI/CD pipelines. Moreover, I have dashboards in place to navigate and monitor all these applications efficiently. It's fair to say that a significant portion of my digital life depends on these machines, which are entirely under my control at home.
 
 ![Homepage Dashboard and my Applications](/images/2024/01/homepage.png)
 
-## On my router "Rotom"
+### On my router "Rotom"
 
 On the compact yet capable machine, I have set up two virtual machines and one LXC container to manage various services and applications.
 
@@ -52,14 +52,14 @@ In addition to the routing functions, "Rotom" hosts several other programs:
 
 Jellyfin operates within an LXC container, with the Intel iGPU passed through for video transcoding. The remaining services are housed in Docker containers running on a Debian VM. The Debian VM also functions as a *side router* for my Homelab PC and devices such as the Apple TV and Sonos One.
 
-## On my Synology NAS "Uxie"
+### On my Synology NAS "Uxie"
 
 As my storage center, I need my NAS to be as robust as possible, so I haven’t installed too many applications on it.
 
 In addition to standard NAS services like SMB, NFS, and File Station, the applications I use include:
 
 - **[Synology Photos](https://www.synology.com/en-global/dsm/feature/photos)**: Backs up the photos of my family. I’m considering switching to an open-source solution like Immich, but the last time I tried, Immich didn’t integrate well with the iCloud Photo Library.
-- **[qBittorrent](https://github.com/qbittorrent/qBittorrent)** and [VueTorrent](https://github.com/VueTorrent/VueTorrent): Mostly used to download *Linux ISOs*.
+- **[qBittorrent](https://github.com/qbittorrent/qBittorrent)** and **[VueTorrent](https://github.com/VueTorrent/VueTorrent)**: Mostly used to download *Linux ISOs*.
 - **[aria2](https://github.com/aria2/aria2)**: Another tool for downloading *Linux ISOs*.
 - **[Forgejo](https://codeberg.org/forgejo/forgejo)**: A self-hosted Git server; it’s lightweight and a community fork of Gitea.
 - **[Sonatype Nexus Repository](https://www.sonatype.com/products/sonatype-nexus-oss-download)**: My private package manager for Docker and npm, and also a cache proxy for docker.io and ghcr.io to ensure all my applications can start without an internet connection.
@@ -71,7 +71,7 @@ In addition to standard NAS services like SMB, NFS, and File Station, the applic
 
 Apart from first-party Synology apps, all third-party programs are running in Docker containers.
 
-## A Home Kubernetes Cluster in "Porygon"
+### A Home Kubernetes Cluster in "Porygon"
 
 I've migrated the [k3s](https://github.com/k3s-io/k3s) control plane and worker VMs from Frost Canyon NUC "Comet" to my new Homelab PC. Most of my applications are running in this k3s cluster because it's easy to maintain, upgrade, and recover. Building this has also been a great way to learn.
 
@@ -106,7 +106,7 @@ Another tool I use in parallel with `kubectl` for managing resources in the clus
 
 All k3s nodes operate under Ubuntu 22.04, and I've configured the [system-upgrade-controller](https://github.com/rancher/system-upgrade-controller) to automatically update k3s and apt.
 
-## Remote Development and Desktop
+### Remote Development and Desktop
 
 Like my Kubernetes cluster, The Fedora Workstation VM "comet-core" is also migrated from the Frost Canyon NUC. The Intel Iris Xe iGPU is passed through it. I use it mostly as a remote development server, and when I need GUI applications, I can access the [GNOME desktop](https://www.gnome.org/) with RDP via [xrdp](https://github.com/neutrinolabs/xrdp) and [xorgxrdp](https://github.com/neutrinolabs/xorgxrdp).
 
@@ -117,7 +117,7 @@ Notable applications running in this VM contains:
 - **[calibre](https://calibre-ebook.com)** and **[calibre-web](https://github.com/janeczku/calibre-web)**: My book library. I also use calibre to DeDRM and convert digital books I bought.
 - **[Handbrake](https://handbrake.fr/)**: I use it to transcode videos from my Blu-ray collection to H.265 with Intel Quick Sync.
 
-## Gaming and AI Experiments
+### Gaming and AI Experiments
 
 Having a dedicated GPU has significantly justified upgrading my Homelab PC. I've set up a Windows VM "Porygon-Z" and a Debian VM "Porygon2," both configured to utilize the RTX 3060 GPU. However, only one VM can be powered on at a time since GPU passthrough is restricted to a single VM.
 
@@ -125,7 +125,7 @@ In the Debian VM, I've been experimenting with a few smaller LLM apps such as [O
 
 On the Windows VM, I've installed [Sunshine](https://github.com/LizardByte/Sunshine), primarily to stream games from PC Game Pass, and titles that are either unsupported or don't perform well on the Steam Deck, to my handheld console with [Moonlight](https://moonlight-stream.org/). The ability to play games at 1080p 60fps with the highest settings on a handheld device was a dream I never thought would be possible until now.
 
-## Other VMs and LXC Containers
+### Other VMs and LXC Containers
 
 Last but not least, I'd like to highlight more applications.
 
@@ -133,13 +133,13 @@ Last but not least, I'd like to highlight more applications.
 
 [Home Assistant OS](https://www.home-assistant.io/) orchestrates all my IoT devices and bridges them to HomeKit. For devices that don't natively support HomeKit, I can access them through [hass-xiaomi-miot](https://github.com/al-one/hass-xiaomi-miot). Home Assistant also automates various tasks, such as controlling the network cabinet fan I mentioned earlier and activating the Aqara M1S night light when someone enters the living room at night.
 
-# Backups
+## Backups
 
 I loosely adhere to the 3-2-1 backup strategy for safeguarding my data. My NAS serves as the primary backup target for various devices, including my family's iMac via Time Machine and two Proxmox VE devices using a [Proxmox Backup Server](https://www.proxmox.com/en/proxmox-backup-server/overview) [VM](https://www.synology.com/en-global/dsm/feature/virtual_machine_manager). Additionally, my older Synology DS916+ NAS, which has been operational for 8 years, secures the data from my main NAS through [rsync](https://kb.synology.com/en-us/DSM/help/DSM/AdminCenter/application_backupserv_sharedfoldersync?version=7) and [Hyper Backup](https://www.synology.com/en-global/dsm/feature/hyper_backup).
 
 For offsite backup, I utilize [Backblaze B2](https://www.backblaze.com/cloud-storage) and OneDrive. Backblaze B2 houses backups from Hyper Backup, [restic](https://github.com/restic/restic), Longhorn, and [Arq](https://www.arqbackup.com/), while selected folders from my NAS are one-way synced to OneDrive using [Cloud Sync](https://www.synology.com/en-global/dsm/feature/cloud_sync). I've opted not to have a remote backup for my media library due to the storage costs, considering that most of the content can be reacquired by re-ripping physical media or re-downloading.
 
-# Homelab in 2024
+## Homelab in 2024
 
 That's all for my 2023 Homelab setup. I'm very satisfied with my current setup, and there are a few areas I'd like to explore.
 
