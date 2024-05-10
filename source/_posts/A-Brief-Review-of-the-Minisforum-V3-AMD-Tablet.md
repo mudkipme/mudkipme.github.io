@@ -6,6 +6,10 @@ tags:
 
 ![Minisforum V3 AMD Tablet](/images/2024/04/v3-1.jpg)
 
+_**Update:** I have created an [awesome-minisforum-v3](https://github.com/mudkipme/awesome-minisforum-v3) GitHub repository to list information for Minisforum V3 users, including some workarounds for the issues mentioned in this review._
+
+---
+
 ## Quest for the Ideal Portable Linux Device
 
 After my 2016 MacBook Pro experienced multiple hardware issues and was sent for recycling, I no longer have a personal laptop. Until recently, if I wish to do some programming in a coffee shop or during a family trip, my only options are the corporate-provisioned MacBook or my iPad Pro 2020, neither of which is ideal. I had hoped the iPad Pro could be more productive and tried various setups involving [code-server](https://github.com/coder/code-server) and remote development, but I encountered many limitations. Furthermore, the fact that Apple has restricted iPadOS, preventing me from installing any software I want, has become increasingly uncomfortable for me in light of the recent [Digital Markets Act](https://www.apple.com/newsroom/2024/01/apple-announces-changes-to-ios-safari-and-the-app-store-in-the-european-union/) and [antitrust](https://www.theverge.com/2024/3/21/24105363/apple-doj-monopoly-lawsuit) discussions.
