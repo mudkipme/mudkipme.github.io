@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=180">
+  <link rel="icon" type="image/png" sizes="32x32" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=32">
+  <link rel="icon" type="image/png" sizes="16x16" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=16">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mudkip.me","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.19.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="MediaWiki 最初为运行维基百科而设计的开源程序，目前服务于超过一万的 Wiki 站点。神奇宝贝百科自2010年9月起运行于 MediaWiki，3年多来积累了很多心得，虽然内容和访问量迅速增长，但服务器开支依然保持在负担得起的范围。水跃希望在这里记录和分享。 日志标题中「用得起」的假设是运行在一台 1GB RAM 虚拟（云）服务器，日页面访问量在一百万以内。市场上 1GB RAM 的 VP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何用得起 MediaWiki">
+<meta property="og:url" content="https://mudkip.me/2014/01/05/%E5%A6%82%E4%BD%95%E7%94%A8%E5%BE%97%E8%B5%B7-MediaWiki/index.html">
+<meta property="og:site_name" content="Mudkip Mud Sport">
+<meta property="og:description" content="MediaWiki 最初为运行维基百科而设计的开源程序，目前服务于超过一万的 Wiki 站点。神奇宝贝百科自2010年9月起运行于 MediaWiki，3年多来积累了很多心得，虽然内容和访问量迅速增长，但服务器开支依然保持在负担得起的范围。水跃希望在这里记录和分享。 日志标题中「用得起」的假设是运行在一台 1GB RAM 虚拟（云）服务器，日页面访问量在一百万以内。市场上 1GB RAM 的 VP">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2014-01-05T20:42:16.000Z">
+<meta property="article:modified_time" content="2024-06-16T10:00:00.949Z">
+<meta property="article:author" content="Mudkip">
+<meta property="article:tag" content="mediawiki">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://mudkip.me/2014/01/05/%E5%A6%82%E4%BD%95%E7%94%A8%E5%BE%97%E8%B5%B7-MediaWiki/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://mudkip.me/2014/01/05/%E5%A6%82%E4%BD%95%E7%94%A8%E5%BE%97%E8%B5%B7-MediaWiki/","path":"2014/01/05/如何用得起-MediaWiki/","title":"如何用得起 MediaWiki"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>如何用得起 MediaWiki | Mudkip Mud Sport</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Mudkip Mud Sport" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mudkip Mud Sport</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Mudkip's Mud Sport Journal</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MediaWiki-%E5%BE%88%E8%80%97%E8%B5%84%E6%BA%90%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">MediaWiki 很耗资源么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84-Web-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">使用高性能的 Web 服务器程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%88%E7%90%86%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">合理的配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E7%BC%93%E5%AD%98"><span class="nav-number">4.</span> <span class="nav-text">服务器端缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#opcode-%E7%BC%93%E5%AD%98"><span class="nav-number">4.1.</span> <span class="nav-text">opcode 缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#object-%E7%BC%93%E5%AD%98"><span class="nav-number">4.2.</span> <span class="nav-text">object 缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E7%BC%93%E5%AD%98"><span class="nav-number">4.3.</span> <span class="nav-text">页面缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%8F%E5%B0%91%E6%A8%A1%E6%9D%BF%E5%92%8C%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9%E6%B8%B2%E6%9F%93%E7%9A%84%E5%BC%80%E9%94%80"><span class="nav-number">5.</span> <span class="nav-text">减少模板和文章内容渲染的开销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%95%86"><span class="nav-number">6.</span> <span class="nav-text">选择合适的服务商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%92%8C%E6%9C%AA%E6%9D%A5"><span class="nav-number">7.</span> <span class="nav-text">其他和未来</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Mudkip</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mudkipme" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mudkipme" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://indieweb.social/@mudkip" title="Mastodon → https:&#x2F;&#x2F;indieweb.social&#x2F;@mudkip" rel="noopener me" target="_blank"><i class="fab fa-mastodon fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mudkip.me/2014/01/05/%E5%A6%82%E4%BD%95%E7%94%A8%E5%BE%97%E8%B5%B7-MediaWiki/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mudkip">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="如何用得起 MediaWiki | Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何用得起 MediaWiki
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2014-01-05 20:42:16" itemprop="dateCreated datePublished" datetime="2014-01-05T20:42:16Z">2014-01-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><a target="_blank" rel="noopener" href="https://www.mediawiki.org/">MediaWiki</a> 最初为运行维基百科而设计的开源程序，目前服务于超过一万的 Wiki 站点。<a target="_blank" rel="noopener" href="http://wiki.52poke.com/">神奇宝贝百科</a>自2010年9月起运行于 MediaWiki，3年多来积累了很多心得，虽然内容和访问量迅速增长，但服务器开支依然保持在负担得起的范围。水跃希望在这里记录和分享。</p>
+<p>日志标题中「用得起」的假设是运行在一台 1GB RAM 虚拟（云）服务器，日页面访问量在一百万以内。市场上 1GB RAM 的 VPS 价格约 10 ～ 30 美元每月。MediaWiki 并不适合运行在共享虚拟主机，或内存不到 512MB 的服务器中。</p>
+<p>另外，<a target="_blank" rel="noopener" href="http://www.mediawiki.org/wiki/Manual:Performance_tuning">MediaWiki 官方网站</a>提供了一些基本的优化方式，非常值得参考。</p>
+<h2 id="MediaWiki-很耗资源么">MediaWiki 很耗资源么</h2>
+<p>是的。相较其他流行的 PHP 开源应用，MediaWiki 可以认为更耗资源，尤其是 CPU 使用，一篇包含复杂模板嵌套的文章，在无缓存状态下的渲染时间可能长达数秒，甚至数十秒。</p>
+<p>经历了十多年的发展，MediaWiki 也是一个<a target="_blank" rel="noopener" href="http://aosabook.org/en/mediawiki.html">架构设计优雅</a>的工程，具有非常强大的功能和可定制性，其性能开销往往是必要的。合理运用多重优化手段方式，可以有效降低 MediaWiki 的性能开销。</p>
+<h2 id="使用高性能的-Web-服务器程序">使用高性能的 Web 服务器程序</h2>
+<p>如果在生产环境使用最新版本的服务器程序，往往会引起很大的争议。但事实上，开源程序往往可以保持对较新版本系统环境很好的兼容性，新版本的系统环境往往具有更少的 Bug 和非常大的性能提升。</p>
+<p><a target="_blank" rel="noopener" href="http://52poke.com/">52Poké</a> 所在的虚拟服务器采取了较为激进的做法，自2011年后一直使用 <a target="_blank" rel="noopener" href="https://www.archlinux.org">Arch Linux</a> 操作系统，其滚动升级的特性可以让包管理（pacman）安装的应用都保持在最新版本，同时 Linode 也默认提供了最新版本的 Linux 内核。虽然对基础服务大版本的升级危险较大，但两年多来数十次 <code>pacman -Syu</code> 并未带来很大麻烦，除了在某几个凌晨造成数十分钟的不可用（都是由于较长时间未升级造成跨度较大并且操作失误）。</p>
+<p>回到主题，对 MediaWiki 而言，高性能的 Web 服务器程序除了意味着 PHP 5.5，MySQL/MariaDB 5.5+；也包括使用 PHP 5.5 内置的 <a target="_blank" rel="noopener" href="http://php.net/opcache">OPcache</a> 加速，以及使用 <a target="_blank" rel="noopener" href="http://nginx.org">Nginx</a> + <a target="_blank" rel="noopener" href="http://php-fpm.org">php-fpm</a> 代替 Apache，<a target="_blank" rel="noopener" href="http://memcached.org">Memcached</a> 和/或 <a target="_blank" rel="noopener" href="http://redis.io">Redis</a> 缓存等。</p>
+<p>当前支持神奇宝贝百科的<a target="_blank" rel="noopener" href="http://wiki.52poke.com/wiki/Special:%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF">服务器程序</a>为 PHP 5.5.7，MariaDB（MySQL 对社区友好的一个变体）5.5.34，Nginx 1.4.4 以及 Memcached 1.4.17。</p>
+<h2 id="合理的配置文件">合理的配置文件</h2>
+<p>MediaWiki 的默认配置（<code>LocalSettings.php</code>）并不适合生产环境，这里简要介绍一个低能耗的 MediaWiki 系统需要增加的配置项：</p>
+<ul>
+<li><code>$wgDisableCounters = true;</code> 关闭内置的统计功能，如需要统计访问量可以使用 Google Analytics 等外部服务。</li>
+<li><code>$wgWellFormedXml = false;</code> 以及 <code>$wgHtml5 = true;</code> 打开 HTML5 标签输出并关闭兼容 XML 语法，可以降低页面的体积。</li>
+<li><code>$wgShowIPinHeader = false;</code> 关闭未登录用户在右上角显示 IP 地址，以便使用静态缓存。</li>
+<li><code>$wgUseGzip = true;</code> 开启 gzip 压缩，降低页面体积，另外也可在 Web 服务器中配置开启 gzip。</li>
+<li><code>$wgMiserMode = true;</code> 关闭实时生成特殊页面；建议同时在 cron 里配置定时任务，定期生成特殊页面。</li>
+<li><code>$wgJobRunRate = 0.01;</code> 减少执行任务的频率（即每次请求有1%的几率运行任务）；MediaWiki 的任务往往需要耗费数秒的时间执行，默认运行频率为1，一旦插入任务就可能导致 PHP 进程全部被占满；这里同样建议在 cron 里配置定时任务运行 MediaWiki 的任务，以免使任务队列积累过多。</li>
+<li><code>$wgInvalidateCacheOnLocalSettingsChange = false;</code> 关闭修改 LocalSettings.php 使所有缓存失效的特性；MediaWiki 的缓存完全失效是非常可怕的，几乎可以迅速致服务器僵死。</li>
+</ul>
+<h2 id="服务器端缓存">服务器端缓存</h2>
+<p>MediaWiki 的稳定运行，opcode 缓存、object 缓存和页面缓存都是必不可少的。</p>
+<h3 id="opcode-缓存">opcode 缓存</h3>
+<p>opcode 缓存用于加速 PHP 脚本的执行。PHP 5.5 内置了 OPcache（即之前的 ZendOptimizer+），比起 eAccelerator、XCache 和 APC 有更好的性能，只需在 php.ini 中引用 <a target="_blank" rel="noopener" href="http://opcache.so">opcache.so</a> 即可使用，同时 OPcache 也可单独安装在 PHP 5.4 或 5.3 环境中。另外需要注意 PHP 5.5.1 及 5.5.2 内置的 OPcache 和 MediaWiki 存在兼容问题，5.5.3 以上版本已解决。</p>
+<h3 id="object-缓存">object 缓存</h3>
+<p>MediaWiki 可以利用 object 缓存存储包括界面语言文字、文件信息、模板生成的中间产物、最终页面渲染 HTML 等数据。MediaWiki 支持使用 APC、XCache、Memcached、Redis、MySQL 数据库方式缓存数据，但配置中默认未开启 object 缓存功能。在这几种缓存方式中，除 MySQL 数据库外都需要在内存中存储，其中前3种存储方式无法持久化。</p>
+<p>这里推荐使用是 Memcached 和 MySQL 结合的方式，配置方式如下：</p>
+<pre>$wgMainCacheType = CACHE_MEMCACHED;   
+$wgMemCachedServers = array('127.0.0.1:11211');  
+$wgParserCacheType = CACHE_DB;</pre>
+<p>Memcached 由于将数据存储在内存中，读写速度非常快；存储相同内容的数据占据的内存空间也是几种方式中最小。但 Parser Cache 由于包含了页面完整的 HTML 文本，需要的体积非常大，同时一旦失效则会需要重新解析所有页面，带来巨大的 CPU 开销；在内存有限的条件下更适合存储到较为持久的 MySQL 数据库中。</p>
+<p>神奇宝贝百科在2013年初使用 Memcached 曾频繁遇到 Segfault，因此更换到 Redis + MySQL 结合的方式，但 Redis 耗费了更多内存（仅指在 MediaWiki 的使用方式下），也有相对较大的 I/O 使用。2013年12月 Memcached 发布了 1.4.17 更新，解决了不稳定的问题，因此目前又换回使用 Memcached。</p>
+<h3 id="页面缓存">页面缓存</h3>
+<p>作为一个 Wiki，对未登录用户而言页面几乎是静态的，所以页面缓存可以非常有效；MediaWiki 提供了 <a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/Manual:File_cache">File cache</a> 功能，另外也可以使用 <a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/Manual:Squid_caching">Squid</a> 或 <a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/Manual:Varnish_caching">Varnish</a> 的功能。而对于只有一台服务器的站点而言，这里更推荐使用 Nginx 自带的 FastCGI 缓存功能。</p>
+<p>MediaWiki 默认会根据请求头中的 Accept-Language（即用户浏览器语言）、Cookie 等因素区分不同的页面缓存（可见响应头中的 Vary 行）。但对于单一语言、没有文字变种的 Wiki，只要已登录用户不使用页面缓存，未登录用户访问则看到相同的页面内容即可。</p>
+<p>以下是神奇宝贝百科的 FastCGI 缓存配置，为便于介绍去掉了中文简繁处理相关的内容。这里缓存有效期为5小时，可以根据实际情况修改。另外，特殊页面不宜开启静态缓存（如最近更改和随机页面）。</p>
+<pre>http {
+    ...
+    fastcgi_cache_path  /var/cache/nginx/wiki levels=2:2 keys_zone=wiki:128m inactive=5h max_size=2048m;
+    
+    server {
+        ...
+        if ($http_cookie ~* "52poke_wikiUserID") {
+            set $do_not_cache 1;
+        }
+        if ($uri ~ "^/wiki/Special:") {
+            set $do_not_cache 1;
+        }
+        if ($args ~ "Special:") {
+            set $do_not_cache 1;
+        }
+        fastcgi_cache wiki;
+        fastcgi_ignore_headers Cache-Control Expires;
+        fastcgi_hide_header Vary;
+        fastcgi_cache_key $uri$is_args$args;
+        fastcgi_cache_bypass $do_not_cache;
+        fastcgi_no_cache $do_not_cache;
+        fastcgi_cache_valid  200 5h;
+        fastcgi_cache_valid  301 0;
+        fastcgi_cache_valid  404 20m;
+    }
+}</pre>
+<p>使用页面缓存就会遇到缓存更新的问题，好在 MediaWiki 提供了 PURGE 功能，配置后只要相应的页面有更新就会发出 HTTP PURGE 请求。<code>LocalSettings.php</code> 中的配置如下：</p>
+<pre>$wgUseSquid = true;
+$wgSquidServers = array('127.0.0.1’);</pre>
+<p>这里只配置了 127.0.0.1 因 52Poké 只有一台前端服务器，并且和 MediaWiki 程序是同一台。不过 Nginx 默认并不支持 PURGE 请求，可以编译安装 <a target="_blank" rel="noopener" href="http://labs.frickle.com/nginx_ngx_cache_purge/">ngx_cache_purge</a> 扩展实现，具体操作步骤可以<a target="_blank" rel="noopener" href="http://mcnearney.net/blog/2010/2/28/compiling-nginx-cache-purging-support/">参考这里</a>。</p>
+<p>对于具有文字变种，如中文简繁之分的 Wiki，则情况较为复杂，今后这里会详细讨论 MediaWiki 处理中文简繁的问题，本篇就不详述了。</p>
+<h2 id="减少模板和文章内容渲染的开销">减少模板和文章内容渲染的开销</h2>
+<p>MediaWiki 提供了非常强大的模板和语法处理功能，尤其是内置的 ParserFunctions 扩展，但语法解析需要非常大的 CPU 开销。</p>
+<p>这里建议尽可能减少不必要的模板使用和嵌套。例如对于一些通用的文字、背景颜色、边框样式，更适合在 <code>MediaWiki:Common.css</code> 或小工具中使用 CSS 实现。如果文章在编辑后需要等待很长的时间才能加载出来，则需要对其中使用的模板进行优化，必要时可以考虑拆分文章。</p>
+<p>MediaWiki 解析图片信息也需要较大的资源消耗，对于较为固定的图片、尤其是尺寸较小的图片，推荐使用 CSS Sprites 而非通过 Wiki 上传。</p>
+<p>MediaWiki 也会对包含过多模板嵌套、或者使用了过多语法呼叫（例如 switch 和 if 语法）的文章自动添加警示的分类。</p>
+<h2 id="选择合适的服务商">选择合适的服务商</h2>
+<p>基础硬件的性能往往是第一位的，对运行 MediaWiki 而言，CPU、内存、I/O 性能、网络带宽都至关重要。其实早在2006年 52Poké 就搭建了 MediaWiki，但在有上百篇文章之后当时所在的虚拟主机就不堪重负，不得不在后来转型使用自建的程序，直到2010年开始使用 Linode。</p>
+<p>就 52Poké 使用 <a target="_blank" rel="noopener" href="https://www.linode.com/?r=f7340c28b6c910d5b5369471c4a029b71eb9b015">Linode</a><em>（推介链接）</em> 的经历而言，Linode 是一家不错的 VPS 提供商，但并不算完美。Linode 在2013年进行了多次升级，在流量、网络速度、CPU 性能和性价比方面有较大优势。</p>
+<p>VPS 有一个不稳定因素是 CPU 和 I/O 性能会受同一台物理服务器的邻居影响，52Poké 曾遇到过 CPU %Steal 过高导致性能较差的问题，不过联系客服很快迁移了另一台物理服务器解决。Linode 的 I/O 性能比提供了 SSD 的服务商要差，目前 Linode 只在纽瓦克数据中心提供了测试版 SSD 服务，亚洲用户较多使用的东京数据中心则尚未提供。</p>
+<h2 id="其他和未来">其他和未来</h2>
+<p>到这里已经介绍了高性能 MediaWiki 站点的必要条件。不过对于拥有较多图片的 Wiki 来说，可能很容易遇到流量超限或 I/O 消耗较大的问题，推荐如有必要添加一台流量较为廉价的 VPS 存放或缓存图片；另外可以考虑将图片延迟加载，即当浏览者滚动到图片位置时再加载，该功能的 MediaWiki 扩展在完成开发后会开源。</p>
+<p>关于 MediaWiki，除了性能之外，还有很多值得讨论的话题。比如扩展，小工具（Gadget），中文的繁简问题，条目命名和内容规范，自动化批量建设内容，版权问题，以及作为一个 Wiki 社群的建设和发展。这些就留在以后继续讨论吧。</p>
+<p>对于未来，如何支持移动设备，如何进一步减少服务器端模板的开销是水跃在继续思考的问题。MediaWiki 官方提供了 <a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/Extension:MobileFrontend">MobileFrontend</a> 扩展，但根据设备输出不同的内容会带来更多的复杂度和资源消耗，而且可能降低了移动设备的体验；所以我更希望有响应式的方案。对于复杂的表格如果可以服务器只在页面中输出元数据，由 JavaScript 在浏览器中渲染的话，就可以减轻服务器的压力。但修改 Wiki 的 JavaScript 和 CSS 的权限往往不会开放给普通用户，这样做对社区并不利。</p>
+<p>2014年的第一篇终于啰嗦完了，这里祝各位新年快乐，也希望 MediaWiki 的同好有所收获吧: )</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/mediawiki/" rel="tag"># mediawiki</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2013/10/20/Pok%C3%A9mon-XY/" rel="prev" title="Pokémon XY">
+                  <i class="fa fa-angle-left"></i> Pokémon XY
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2014/06/22/Zero-Escape-Virtue%E2%80%99s-Last-Reword/" rel="next" title="Zero Escape: Virtue’s Last Reword">
+                  Zero Escape: Virtue’s Last Reword <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mudkip</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
