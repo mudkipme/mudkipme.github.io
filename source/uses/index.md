@@ -20,6 +20,7 @@ date: 2024-09-11 00:46:52
         - [ONEXGPU](https://onexplayerstore.com/products/onexgpu) (Radeon RX 7600M XT eGPU)
         - [8bitdo SF30 Pro](https://www.youtube.com/watch?v=mGqI5yJOsao)
     - Intel Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/) & Windows 11)
+        - Inno3D GeForce RTX 3080
         - Xbox Wireless Controller
 - Retro Gaming
     - [Ayn Odin 2 Pro](https://www.ayntec.com/products/odin-2)
@@ -84,7 +85,7 @@ date: 2024-09-11 00:46:52
 	- **Android**: [Showly](https://github.com/michaldrabik/showly-2.0)
 - **Read Later**: [Wallabag](https://wallabag.org/) and [frigoligo](https://github.com/casimir/frigoligo)
 - RSS
-	- **iOS**: [Reeder Classic](https://reeder.app/classic/)
+	- **iOS/macOS**: [Reeder Classic](https://reeder.app/classic/)
 	- **Android**: [FocusReader](https://play.google.com/store/apps/details?id=allen.town.focus.reader)
 - **File syncing**: [Nextcloud](https://nextcloud.com/)
 - **Local Transfer**: [KDE Connect](https://kdeconnect.kde.org/)
