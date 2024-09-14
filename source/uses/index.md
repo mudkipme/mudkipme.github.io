@@ -7,7 +7,7 @@ date: 2024-09-11 00:46:52
 
 - iPhone 12 Pro
 - Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
-- [Minisforum V3 Tablet](https://mudkip.me/2024/04/14/A-Brief-Review-of-the-Minisforum-V3-AMD-Tablet/) ([Fedora KDE](https://fedoraproject.org/spins/kde/) & Windows 11)
+- [Minisforum V3 Tablet](https://mudkip.me/2024/04/14/A-Brief-Review-of-the-Minisforum-V3-AMD-Tablet/) ([Fedora KDE](https://fedoraproject.org/spins/kde/))
 - iMac M1
 
 ## Gaming
@@ -16,9 +16,6 @@ date: 2024-09-11 00:46:52
     - [Nintendo Switch OLED](https://www.nintendo.com/us/store/products/nintendo-switch-oled-model-pokemon-scarlet-pokemon-violet/) (Pokémon Scarlet/Violet Edition)
     - Steam Deck LCD 512G
     - PlayStation 5
-    - Minisforum V3 Tablet
-        - [ONEXGPU](https://onexplayerstore.com/products/onexgpu) (Radeon RX 7600M XT eGPU)
-        - [8bitdo SF30 Pro](https://www.youtube.com/watch?v=mGqI5yJOsao)
     - Intel Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/) & Windows 11)
         - Inno3D GeForce RTX 3080
         - Xbox Wireless Controller
