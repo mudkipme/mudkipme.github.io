@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=180">
+  <link rel="icon" type="image/png" sizes="32x32" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=32">
+  <link rel="icon" type="image/png" sizes="16x16" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=16">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mudkip.me","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="自 2011 年拥有一台 WD My Book Live，网络附加存储，简称 NAS，就是我的数字生活中非常重要的一部分。目前，一台拥有 12TB 容量的 Synology DS916+ 是我的存储、媒体与智能控制的中心。 硬件配置  我的 NAS 是一台 Synology DS916+，9 代表 4 盘位 + 可以接入一台 5 盘位的扩展机，16 代表 2016 年款，+ 代表「适用于小型商务环">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NAS 使用报告">
+<meta property="og:url" content="https://mudkip.me/2017/10/14/NAS-%E4%BD%BF%E7%94%A8%E6%8A%A5%E5%91%8A/index.html">
+<meta property="og:site_name" content="Mudkip Mud Sport">
+<meta property="og:description" content="自 2011 年拥有一台 WD My Book Live，网络附加存储，简称 NAS，就是我的数字生活中非常重要的一部分。目前，一台拥有 12TB 容量的 Synology DS916+ 是我的存储、媒体与智能控制的中心。 硬件配置  我的 NAS 是一台 Synology DS916+，9 代表 4 盘位 + 可以接入一台 5 盘位的扩展机，16 代表 2016 年款，+ 代表「适用于小型商务环">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*xa_ccOQgG-pyjhhaqYVQfA.jpeg">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*46nJIfO9EjZZxVSBPSE2uw.png">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*d0phGEtRz-J6lBcUUUm0aw.png">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*dXKZN_9xF2JlGeHrNEAFyw.png">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*-fEq5Y28Mwb2HP8JmIpTTA.png">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*3x8g-7nmWs8PUYCEI1HbJw.png">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*JYgqSIgUZschwOCX2D8Eiw.png">
+<meta property="og:image" content="https://mudkip.me/images/2017/10/1*Vz9G9_4HmJ9EeZbtTWdArw.png">
+<meta property="article:published_time" content="2017-10-14T11:17:39.000Z">
+<meta property="article:modified_time" content="2024-10-09T18:10:24.238Z">
+<meta property="article:author" content="Mudkip">
+<meta property="article:tag" content="nas">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mudkip.me/images/2017/10/1*xa_ccOQgG-pyjhhaqYVQfA.jpeg">
+
+
+<link rel="canonical" href="https://mudkip.me/2017/10/14/NAS-%E4%BD%BF%E7%94%A8%E6%8A%A5%E5%91%8A/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://mudkip.me/2017/10/14/NAS-%E4%BD%BF%E7%94%A8%E6%8A%A5%E5%91%8A/","path":"2017/10/14/NAS-使用报告/","title":"NAS 使用报告"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NAS 使用报告 | Mudkip Mud Sport</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><meta name="fediverse:creator" content="@mudkip@indieweb.social"><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Mudkip Mud Sport" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mudkip Mud Sport</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Mudkip's Mud Sport Journal</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-uses"><a href="/uses/" rel="section"><i class="fa fa-computer fa-fw"></i>Uses</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">硬件配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAS-%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">NAS 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">2.1.</span> <span class="nav-text">文件存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E5%AD%98%E5%82%A8"><span class="nav-number">2.2.</span> <span class="nav-text">视频存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9F%B3%E4%B9%90%E5%AD%98%E5%82%A8"><span class="nav-number">2.3.</span> <span class="nav-text">音乐存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%AD%98%E5%82%A8"><span class="nav-number">2.4.</span> <span class="nav-text">图片存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.5.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8E%A7%E5%88%B6"><span class="nav-number">2.6.</span> <span class="nav-text">智能控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91"><span class="nav-number">2.7.</span> <span class="nav-text">开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%92%E8%81%94%E7%BD%91"><span class="nav-number">2.8.</span> <span class="nav-text">互联网</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD"><span class="nav-number">3.</span> <span class="nav-text">备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8"><span class="nav-number">4.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E6%BA%90"><span class="nav-number">5.</span> <span class="nav-text">电源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E8%B6%B3"><span class="nav-number">6.</span> <span class="nav-text">不足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Mudkip</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mudkipme" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mudkipme" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://indieweb.social/@mudkip" title="Mastodon → https:&#x2F;&#x2F;indieweb.social&#x2F;@mudkip" rel="noopener me" target="_blank"><i class="fab fa-mastodon fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mudkip.me/2017/10/14/NAS-%E4%BD%BF%E7%94%A8%E6%8A%A5%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mudkip">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NAS 使用报告 | Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NAS 使用报告
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2017-10-14 11:17:39" itemprop="dateCreated datePublished" datetime="2017-10-14T11:17:39Z">2017-10-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>自 2011 年拥有一台 WD My Book Live，网络附加存储，简称 NAS，就是我的数字生活中非常重要的一部分。目前，一台拥有 12TB 容量的 Synology DS916+ 是我的存储、媒体与智能控制的中心。</p>
+<h2 id="硬件配置">硬件配置</h2>
+<p><img src="/images/2017/10/1*xa_ccOQgG-pyjhhaqYVQfA.jpeg" alt=""></p>
+<p>我的 NAS 是一台 Synology DS916+，9 代表 4 盘位 + 可以接入一台 5 盘位的扩展机，16 代表 2016 年款，+ 代表「适用于小型商务环境」的型号。同系列当前最新的型号是 <a target="_blank" rel="noopener" href="https://www.synology.com/zh-cn/products/DS918+">DiskStation DS918+</a>。</p>
+<p>目前机内装有 4 块 WD 为 NAS 专用的 4TB 红盘。由于较高故障率的经验，个人并不推荐选择（不过售后服务还不错，目前更换后的硬盘也保持稳定），这可能由于 WD 红盘本身的故障率（参考 <a target="_blank" rel="noopener" href="https://www.backblaze.com/blog/hard-drive-failure-rates-q3-2016/">Backblaze 2016 Q3 数据</a>，根据 <a target="_blank" rel="noopener" href="https://www.backblaze.com/blog/hard-drive-failure-stats-q2-2017/">Backblaze 2017 Q2 数据</a>已有改善）、代理商简陋的包装或电商不安全的运输或三者皆有。</p>
+<p>4 块硬盘使用 <a target="_blank" rel="noopener" href="https://www.synology.com/zh-cn/knowledgebase/DSM/tutorial/Storage/What_is_Synology_Hybrid_RAID_SHR">Synology Hybrid RAID</a> 组成 12TB 存储空间和 1 块硬盘容错。混合 RAID 的原因是由于存储空间从原先 6TB 升级而来，底层实际为多个 RAID 5 拼接而成。</p>
+<p>NAS 的访问速度除 NAS 本身性能外，还受限于本地网络的速度，为保证理想的访问速度，强烈建议使用 5GHz 802.11ac 标准的路由器，我目前使用的是 ASUS RT-AC68U；远程访问的速度则主要取决于当地 ISP 的上行速度以及是否有公网 IP 地址。</p>
+<h2 id="NAS-使用">NAS 使用</h2>
+<h3 id="文件存储">文件存储</h3>
+<p>首先 NAS 显而易见的需求是文件管理，Synology DSM 提供了 SMB / AFP / WebDAV 等协议的文件访问方式。由于 Apple 已经弃用 AFP，我也关闭了 AFP 文件共享。</p>
+<p><img src="/images/2017/10/1*46nJIfO9EjZZxVSBPSE2uw.png" alt=""></p>
+<p>在 macOS 与 Windows 平台，SMB 是主要的文件访问方式，NAS 可以被自动发现并直接用 Finder 访问。Web 端的 File Station 与 <a target="_blank" rel="noopener" href="https://panic.com/transmit/">Transmit</a> 等 WebDAV 客户端也可以访问 NAS，使用 WebDAV 客户端有一个好处是当需要在不同的顶级共享文件夹（非加密）之间移动文件时可以快速完成。</p>
+<p>iOS 上有很多可以通过 SMB 或 WebDAV 协议访问 NAS 的 App，我目前使用的主要有 <a target="_blank" rel="noopener" href="https://panic.com/transmit-ios/">Transmit for iOS</a>、<a target="_blank" rel="noopener" href="https://www.stratospherix.com/products/filebrowser/">FileBrowser</a> 和 Readdle 的 <a target="_blank" rel="noopener" href="https://readdle.com/products/documents">Documents</a>。其中 Documents 有较好的文档浏览功能（结合 <a target="_blank" rel="noopener" href="https://pdfexpert.com/">PDF Expert</a>）；Transmit 适合于移动文件、上传下载和与其他服务器传输。</p>
+<p><img src="/images/2017/10/1*d0phGEtRz-J6lBcUUUm0aw.png" alt=""></p>
+<p>iOS 11 提供了 File Provider extension，可以直接在原生文件应用管理云端文件，并可直接在第三方 App 打开和保存；Drag &amp; Drop 功能也可以使文件方便地在不同 App 间通信。近日 FileBrowser 的更新为 Files 和 Drag &amp; Drop 提供了完整的支持，所以 FileBrowser 目前是我主要使用的 NAS 文件管理 App。FileBrowser 也有 <a target="_blank" rel="noopener" href="https://www.stratospherix.com/products/filebrowsertv/">Apple TV 版本</a>，可以浏览图片、播放音频和视频（仅限 tvOS 直接支持的格式）。</p>
+<p>值得一提的是移动平台的 DS file（以及 Web 端 File Station）有一些独有的功能，比如在服务器端文件解压，使用其他工具都需要将压缩包下载到客户端解压后再上传，DS file 可以直接在 NAS 上完成；以及在加密文件夹直接移动文件等需要耗时的操作，使用 Synology 官方的工具会比较方便。</p>
+<p>另外，包括 <a target="_blank" rel="noopener" href="https://www.omnigroup.com/omnipresence">Omni</a> 系列产品、<a target="_blank" rel="noopener" href="http://www.devontechnologies.com/products/devonthink/">DEVONthink</a>、iWork 套件、 <a target="_blank" rel="noopener" href="http://gingerlabs.com/">Notability</a> 等 App 都提供了 WebDAV 的同步、访问或备份功能，可以直接将这些应用的数据存储到 NAS 上。（这里有一个不解是，Apple 在 iWork 应用中提供了在 Document Browser 浏览 WebDAV 服务器的功能，为什么不直接把它放到 Files App 中呢）</p>
+<h3 id="视频存储">视频存储</h3>
+<p>家用 NAS 很大的一个用途是视频管理。Synology 提供了 Video Station 管理视频，不过 <a target="_blank" rel="noopener" href="https://www.plex.tv/">Plex</a> 在全平台（iOS / Android / Windows UWP / Apple TV / Web / macOS / Windows）提供了更好的体验。</p>
+<p><img src="/images/2017/10/1*dXKZN_9xF2JlGeHrNEAFyw.png" alt=""></p>
+<p>电影和电视节目类可以自动匹配的视频文件，我会采取和 iTunes 一致的文件夹/文件命名规则保存（例如<code>/video/电视节目/プリンセス・プリンシパル/Season 1/08 case20 Ripper Dipper.mp4</code>）。</p>
+<p>我有很多动画与音乐 Blu-ray 和 DVD 光盘。入手光盘后，我首先用 <a target="_blank" rel="noopener" href="http://www.bluray-player-software.com/mac-bluray-dvd-copy.htm">Aurora Mac Blu-ray Copy</a> 将光盘存档为 ISO 文件存储到 NAS 中（DVD 则用 <a target="_blank" rel="noopener" href="https://www.macdvdripperpro.com/">MDRP</a>），然后利用外出的时间用 <a target="_blank" rel="noopener" href="https://handbrake.fr/nightly.php">Handbrake</a> 转码为 HEVC（需要使用 nightly 版本以更好兼容 High Sierra 与 iOS/tvOS 11），在 iOS 11 发布前视频是转码为 H.264。目前 Video Station 和 Plex 均未支持在 iOS/tvOS 11 直接播放 HEVC，Plex 已确认正在进行相关开发，目前可以用 <a target="_blank" rel="noopener" href="https://nplayer.com/">nPlayer</a>（iOS）或 <a target="_blank" rel="noopener" href="https://firecore.com/infuse">Infuse</a>（iOS/tvOS）播放 HEVC 视频文件。</p>
+<p>视频转码是一个比较纠结的问题，我的 MacBook Pro 2016 的 Skylake CPU 与 Radeon Pro 460 均支持硬件 H.264/HEVC 编码。然而 Handbrake 在 macOS 上并不支持硬件编码（有一个 Handbrake 的 <a target="_blank" rel="noopener" href="https://github.com/galad87/HandBrake/tree/videotoolbox">fork</a> 支持 macOS 上 H.264 的硬件转码，但不支持内嵌字幕和 HEVC）；而在 Windows 上，Handbrake 虽然支持 Intel Quick Sync，但 Boot Camp 屏蔽了集成显卡，而 Handbrake 目前<a target="_blank" rel="noopener" href="https://github.com/HandBrake/HandBrake/issues/697">并不支持</a> AMD VCE 硬件编码，我尚未找到同时支持 Blu-ray 和 AMD VCE 的转码工具。希望这方面有研究的同学能有更好的方案分享。</p>
+<p>另外，我曾将在 iTunes 购买的影片和电视节目用虚拟机中的 iTunes 10.7 与 Requirem 将 Fairplay 去除再保存到 NAS 中（因此曾在中国区买过的 iTunes 影片得以保留）；目前 Apple 已禁止低版本 iTunes 下载 1080p 影片。</p>
+<p>对于不属于电影和电视节目系列等可以自动匹配的视频文件，我没有放到 Video Station 和 Plex 自动索引的文件夹中，而是用单独的文件夹手工管理，在 iOS 设备用 nPlayer 播放，Apple TV 用 <a target="_blank" rel="noopener" href="https://www.videolan.org/vlc/download-appletv.html">VLC</a> 或 FileBrowser 播放。</p>
+<p>值得一提的是 DS916+ 使用的 CPU 为 Intel Pentium N3710，支持 Intel Quick Sync 硬件编解码 H.264 与 HEVC（8bit）。除了 Synology 官方的 Video Station 支持硬件转码外，Plex Media Server（1.9.1 以上版本）也向 Plex Pass 用户提供了硬件转码支持，可以在服务器配置中开启。然而实际使用来看，硬件转码还存在一些问题，譬如 Video Station 不支持 Hi10P 和 10-bit HEVC 视频的硬件转码，Plex 开启硬件转码后，播放和拖动进度需要等待的时间特别长等。</p>
+<h3 id="音乐存储">音乐存储</h3>
+<p>作为 Anisong 爱好者会有大量音乐收藏。得益于 <a target="_blank" rel="noopener" href="https://web.archive.org/web/20080107121341/http://www.apple.com/hotnews/thoughtsonmusic/">Steve Jobs 的贡献</a>，在多数情况下购买音乐都不具有 DRM。对于购买的 CD，我会用 iTunes 抓取为 Apple Lossless 格式存储到 NAS 中，在 iTunes 购买的 AAC 音乐，则直接复制到 NAS 中。</p>
+<p><img src="/images/2017/10/1*-fEq5Y28Mwb2HP8JmIpTTA.png" alt=""></p>
+<p>Synology 提供了 Audio Station 管理音乐。由于 App 体验和缺少 Apple TV App 的原因，目前我主要用 Plex 管理和播放音乐。不过 Audio Station 有一个很好的特性是可以在客户端离线时，通过 AirPlay 或 USB 在家中播放。</p>
+<p>偶尔我会使用 USB 声卡将音箱和 NAS 连接，除了 Audio Station 支持直接通过外置音箱播放外，我还在 Docker 中安装了 <a target="_blank" rel="noopener" href="https://github.com/kevineye/docker-shairport-sync">shairport-sync</a>，可以将 NAS 作为 AirPlay 播放设备，这样可以直接将 iOS 设备播放的音频输出到 NAS 连接的音箱。</p>
+<h3 id="图片存储">图片存储</h3>
+<p>Synology 提供了 Photo Station 管理图片，并支持自动创建缩略图、相册和自动从移动设备备份照片。不过功能的完善程度以及与操作系统的集成无法与 iCloud Photo Library 相比，所以我主要的照片存储工具仍然是 iCloud Photo Library，NAS 仅作为另一个备份。</p>
+<p><img src="/images/2017/10/1*3x8g-7nmWs8PUYCEI1HbJw.png" alt=""></p>
+<p>然而由于 NAS 相对大的存储空间，对于来源不是 iOS 设备的图片，比如收藏的壁纸、CG 图、CD 与 Blu-ray booklet 扫描等较大体积的图片资源，我会只存在 NAS 中，在 iOS/tvOS 设备上通过 DS photo 浏览。另外，即将推出的 Synology Moments 还会提供人脸、位置识别等功能。</p>
+<p>iOS 11 / A10+ 默认使用新的 HEIC 格式存储图片，遗憾的是 Photo Station 并不支持管理 HEIC 图片，DS photo 近日的更新中针对 iOS 11 的图片备份也会自动将 HEIC 转码为 JPG，这样不仅浪费存储空间，也会损失图片质量。如果只用 NAS 存储图片而不使用 Photo Station 的话，也可以 DS file 的图片备份功能，DS file 可以选择是否将 HEIC 转码为 JPG。</p>
+<p>对于收藏的漫画，我会按章节或书册压缩为 zip 文件，然后用 <a target="_blank" rel="noopener" href="http://comicglass.net/">ComicGlass</a> 通过 WebDAV 串流阅读。</p>
+<h3 id="下载">下载</h3>
+<p>Synology 的 Download Station 内置 HTTP/BitTorrent 等下载可以基本满足下载资源需求；除此之外，我通过 Docker 安装了 <a target="_blank" rel="noopener" href="https://github.com/hobbsAU/docker-aria2">aira2</a>，用于直接通过浏览器插件下载需要 Cookies 验证的内容。</p>
+<p><img src="/images/2017/10/1*JYgqSIgUZschwOCX2D8Eiw.png" alt=""></p>
+<p>另外，使用 <a target="_blank" rel="noopener" href="https://github.com/manbearwiz/youtube-dl-server">youtube-dl-server</a>，结合 <a target="_blank" rel="noopener" href="https://workflow.is/">Workflow</a>，可以方便将视频网站的视频直接下载到 NAS 中。</p>
+<h3 id="智能控制">智能控制</h3>
+<p>Synology 提供了可以用于视频监控的 Surveillance Station。我使用了 Foscam HD816P 作为 Surveillance Station 的摄像头。除了在指定时间进行动作检测、录像和推送通知外，新版的 Surveillance Station 还提供了便于家用的 Home Mode，可以直接根据 DS cam 应用的 Geo-fencing 功能自动切换监控设置，比如只有在离开家时才打开动作侦测和推送。</p>
+<p><img src="/images/2017/10/1*Vz9G9_4HmJ9EeZbtTWdArw.png" alt=""></p>
+<p>很多家用设备可以利用 <a target="_blank" rel="noopener" href="https://github.com/marcoraddatz/homebridge-docker">Homebridge</a> 来支持 HomeKit，NAS 可以代替 Raspberry Pi 在 Docker 中安装 Homebridge。目前我在卧室安装了 Yeelight 彩光灯泡，通过 Homebridge 可以实现在所有 iOS 设备控制。同时，由于 Apple TV 可以作为 HomeKit 中心，在 iOS 的家庭应用中也可创建计划自动控制智能设备。</p>
+<h3 id="开发">开发</h3>
+<p>DS916+ 的性能能够满足很多小型开发的需求，Synology 提供的 Docker 也非常适合开发、部署和测试。</p>
+<p>我在 NAS 上安装了 <a target="_blank" rel="noopener" href="https://gogs.io">gogs</a> 作为 self-hosted Git 服务，相比 GitLab 占用资源要小很多，并且能够满足绝大多数需求。个人的代码和一些服务的配置文件都放在这个 Git 服务中。另外，Docker 中还分别安装了 redis、PostgreSQL 等容器作为其他应用的依赖。</p>
+<p>在 iPad 上写代码是很多 iPad 用户的梦想，有一台可以长期访问的主机为这样的梦想提供了可能性。<a target="_blank" rel="noopener" href="https://workingcopyapp.com/">Working Copy</a> 和 <a target="_blank" rel="noopener" href="https://www.textasticapp.com/">Textastic</a> 已经可以在 iOS 上管理 Git 仓库和编写代码；我在 Docker 中配置了一个用于 nodejs 开发的容器，容器中安装了 ssh、zsh、git、vim 等工具，使用 <a target="_blank" rel="noopener" href="https://panic.com/prompt/">Prompt</a> 连接后即可进行相应的调试。</p>
+<h3 id="互联网">互联网</h3>
+<p>作为一台本地 Linux 主机，NAS 可以间接满足 Apple TV 和游戏机等不具备 Network Extension 的设备连接互联网的需求。我用的是 <a target="_blank" rel="noopener" href="https://github.com/netheril96/MEOW">MEOW</a>，运行在一个单独的 Docker 容器中。虽然 Apple TV 没有直接设置 Proxy Server 的 UI，不过可以通过 USB-C 接口连接 Mac 并使用 Apple Configurator 进行配置（Apple TV 4K 可以通过本地网络配置）。</p>
+<p>在 Nintendo Wi-Fi Connection 关闭之前，有时我会用 Nintendo DS 连接网络，不过 DS 只支持 WEP 连接，无法直接连接家中的 WPA2 网络。NAS 只要插入一个 USB 无线网卡，并在 DSM 中进行一次简单的配置，即可临时创建一个不安全的 Wi-Fi 网络，当不需要时拔掉网卡即可恢复网络安全性。</p>
+<h2 id="备份">备份</h2>
+<p>Synology 提供了 Hyper Backup、Glacier Backup、Cloud Sync 等备份或同步方案。根据 3-2-1 备份原则，NAS 中的重要数据我会在本地和远端各有一份备份。</p>
+<p>本地的备份使用了 3 块被升级替换的 2TB 硬盘，备份时将硬盘通过 USB-C 硬盘盒连接到 Mac，然后分别使用 <a target="_blank" rel="noopener" href="https://www.econtechnologies.com/chronosync/overview.html">ChronoSync</a> 进行增量同步（同类工具还有 GoodSync 或 Carbon Copy Cloner）；NAS 中加密文件夹的内容会备份到加密 HFS+ 分区，其他内容则会备份到 exFAT 分区。</p>
+<p>Synology NAS 也可以直接连接 USB 3.0 外置驱动器，并提供了收费的 exFAT 分区支持。考虑到操作方便、便于直接浏览、以及 802.11ac 网络速度和直接连接硬盘的速度相差不大的原因还是使用了 Mac 进行备份。</p>
+<p>远程备份使用了两种方案。对于对安全性要求高且占用空间并不大的数据（例如图片、音乐、Git 仓库），每周会通过 Hyper Backup 增量备份到 Amazon S3；对于整理好的视频文件、购买的 DRM free 游戏等，则会用 Cloud Sync 单向同步到比较廉价的 <a target="_blank" rel="noopener" href="https://www.backblaze.com/b2/partner-synology.html">Backblaze B2</a> 存储（目前 Hyper Backup 尚不支持 Backblaze B2，使用单向同步可以避免远程的误操作误删文件）。其他诸如 Blu-ray ISO 由于已经是其他存储媒介的备份，且占用空间极大没有做重复的备份。由于其过于复杂的计费规则和取回方式，个人不推荐使用 Glacier Backup。</p>
+<p>至于 Mac 的 Time Machine，我是使用了一块升级替换的硬盘通过 USB-C 硬盘盒连接到 Mac 备份，而没有用 NAS 作为 Time Machine 的存储。原因主要是对目前通信方案的担忧（AFP 协议已被 Apple 弃用，目前版本的 Samba 尚未完全支持 Apple 的 Time Machine over SMB 标准），曾经使用 NAS 作为 Time Machine 存储时也发生过几次 Time Machine 需要重建的经历。另外将 Time Machine 存储到 RAID 中也有空间浪费和频繁的磁盘读写，Accidental Tech Podcast 曾<a target="_blank" rel="noopener" href="https://www.caseyliss.com/2017/2/11/nas-for-n00bs">提到</a>他们的 Time Machine 存储在 NAS 单独的未做冗余的卷中，也是一个不错的方案。</p>
+<p>另外，52Poké 的数据，除每日备份到 Amazon S3 外，也会每周使用 rsync 脚本备份快照到这台 NAS 中。</p>
+<h2 id="安全">安全</h2>
+<p>对 NAS 来说，安全的重要性不言而喻。Synology 也提供了安全审计功能可以进行基本的检查。除此之外，还有一些需要注意的点：</p>
+<ul>
+<li>保持最新的 DSM 和套件版本</li>
+<li>使用唯一的强密码</li>
+<li>尽量将文件存储在加密的文件夹</li>
+<li>所有第三方应用（不在官方应用套件市场的应用）使用 Docker 安装，并最小化开放的权限和文件夹</li>
+<li>关闭 SSH 的密码校验，每个连接设备/应用使用单独的 Private Key</li>
+<li>在配置外部访问时，务必不要将任何未经加密的端口暴露在公网</li>
+<li>开启两步验证</li>
+</ul>
+<p>其中非常重要的是避免将未经 TLS 或 SSH 加密的端口暴露于公网，尤其是经常使用的 WebDAV 等服务，第三方 App 如 Plex 也尽量开启「只允许加密连接」等选项。未经加密的连接意味着 ISP 或开放 Wi-Fi 等可以轻易拿到 NAS 账号与密码，在安全环境日益恶化的情况下是非常危险的。</p>
+<h2 id="电源">电源</h2>
+<p>使用 UPS 备用电源对 NAS 来说是必要的，我使用的是 APC BX650CI。为 NAS 选择备用电源建议选择支持 USB 接口连接的产品，这样当断电时，NAS 能收到消息，并通过 Push 推送通知使用者和在电量较低时自动关机。</p>
+<h2 id="不足">不足</h2>
+<p>目前这台 NAS 比较大的遗憾是，由于不便重建已用 9TB 的 Volume，未能享用 Synology DSM 支持的 btrfs 文件系统的优势，也因此无法使用 Virtual Machine Manager 创建虚拟机。希望有一天，btrfs 能像 Apple 的 APFS 一样提供从 ext4 安全转换的方案。</p>
+<p>这里也简单提一下对 Synology 的吐槽。iOS 9 发布已超过两年，而目前很多 Synology 第一方 iOS 应用都尚未支持 Split View、Picture in Picture 和 iPad Pro 屏幕，至于 iOS 11 的 Files 和 Drag &amp; Drop 支持可能更是遥遥无期。而这些 iOS 特性，对于生产力工具的 NAS 应用而言至关重要。</p>
+<h2 id="总结">总结</h2>
+<p>「云」的存在是今天数字生活的重要部分，由于设备和时间的碎片化，我们对本地存储需求有种日渐式微的错觉。然而「云」本身是不稳定的存在，无论是商业公司间版权纠纷的「大人的事情」，还是随时发生的不可抗力都会让原本可用的比特瞬间消失，甚至赖以生存的真正互联网是否能一直连通都是个巨大的问号。于是在触手可及的物理空间拥有数 TB 的存储，相对永久地保存一些东西，是一个能够带来哪怕很微弱的安全感的重要存在。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/nas/" rel="tag"># nas</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/01/01/2016-In-Review/" rel="prev" title="2016 In Review">
+                  <i class="fa fa-angle-left"></i> 2016 In Review
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2018/01/01/2017-in-Review/" rel="next" title="2017 In Review">
+                  2017 In Review <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mudkip</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
