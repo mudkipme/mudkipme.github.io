@@ -12,16 +12,13 @@ date: 2024-09-11 00:46:52
 
 ## Gaming
 
-- Current-gen
-    - [Nintendo Switch OLED](https://www.nintendo.com/us/store/products/nintendo-switch-oled-model-pokemon-scarlet-pokemon-violet/) (Pokémon Scarlet/Violet Edition)
-    - Steam Deck LCD 512G
-    - PlayStation 5
-    - Intel Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/) & Windows 11)
-        - Inno3D GeForce RTX 3080
-        - Xbox Wireless Controller
-- Retro Gaming
-    - [Ayn Odin 2 Pro](https://www.ayntec.com/products/odin-2)
-    - [Anbernic RG35XXSP](https://anbernic.com/products/rg35xxsp) ([muOS](https://muos.dev/))
+- [Nintendo Switch OLED](https://www.nintendo.com/us/store/products/nintendo-switch-oled-model-pokemon-scarlet-pokemon-violet/) (Pokémon Scarlet/Violet Edition)
+- Steam Deck LCD 512G
+- PlayStation 5
+- Intel Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/) & Windows 11)
+	- Inno3D GeForce RTX 3080
+	- Xbox Wireless Controller
+- [Ayn Odin 2 Pro](https://www.ayntec.com/products/odin-2)
 
 ## Audio
 
@@ -31,7 +28,7 @@ date: 2024-09-11 00:46:52
 ## Reading / Watching
 
 - [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
-- [Lenovo Y700 2022](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) ([crDroid_gsi](https://github.com/naz664/crDroid_gsi))
+- [Lenovo Y700 2022](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/)
 - iPad Pro 2020
 
 ## [Homelab](https://mudkip.me/2024/01/31/My-2023-Homelab-Setup/)
@@ -55,10 +52,10 @@ date: 2024-09-11 00:46:52
 ## Apps
 
 - Browser
-	- **Linux/macOS/Windows**: [Firefox](https://www.mozilla.org/en-US/firefox/)
+	- **Linux/macOS**: [Firefox](https://www.mozilla.org/en-US/firefox/)
 	- **iOS**: Safari
 	- **Android**: [Vanadium](https://github.com/GrapheneOS/Vanadium) and [Cromite](https://github.com/uazo/cromite)
-- **Note-Taking**: [Logseq](https://logseq.com), [Obsidian](https://obsidian.md/) and [Moe Memos](https://memos.moe/)
+- **Note-Taking**: [Obsidian](https://obsidian.md/) and [Moe Memos](https://memos.moe/)
 - **Password Manager**: [Bitwarden](https://bitwarden.com/)
 - Mastodon Clients
 	- **iOS/macOS**: [Mona](https://geo.itunes.apple.com/app/id1659154653)
@@ -68,17 +65,16 @@ date: 2024-09-11 00:46:52
 	- **iOS**: [Voyager](https://apps.apple.com/us/app/voyager-for-lemmy/id6451429762)
 	- **Android**: [Jerboa](https://f-droid.org/en/packages/com.jerboa/)
 - Mail
-	- **Linux/Windows**: [Thunderbird](https://www.thunderbird.net/)
 	- **iOS/macOS**: Apple Mail
-	- **Android**: [K-9 Mail](https://k9mail.app/)
+	- **Android/Linux**: [Thunderbird](https://www.thunderbird.net/)
 - Music
 	- **Streaming**: Spotify
 	- **Library**: [Finamp](https://github.com/jmshrv/finamp) and [Stream Music](https://apps.apple.com/us/app/stream-music-enjoy-music/id6449966496)
 - Video
 	- **iOS**: [Swiftfin](https://apps.apple.com/us/app/swiftfin/id1604098728) and [Fileball](https://apps.apple.com/us/app/fileball/id1558391784)
-	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid) and [MX Player Pro](https://play.google.com/store/apps/details/MX_Player_Pro?id=com.mxtech.videoplayer.pro)
+	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid) and [VLC](https://f-droid.org/en/packages/org.videolan.vlc/)
 - Media Trackers
-	- **iOS**: [Sequel](https://apps.apple.com/us/app/sequel-media-tracker/id1630746993)
+	- **iOS/macOS**: [Sequel](https://apps.apple.com/us/app/sequel-media-tracker/id1630746993)
 	- **Android**: [Showly](https://github.com/michaldrabik/showly-2.0)
 - **Read Later**: [Wallabag](https://wallabag.org/) and [frigoligo](https://github.com/casimir/frigoligo)
 - RSS
@@ -101,4 +97,4 @@ date: 2024-09-11 00:46:52
 - **Community**: Discord
 - **Researching**: [Zotero](https://www.zotero.org/)
 - **Reading**: Apple Books, Play Books and WeRead
-- **Frontends**: [NewPipe](https://github.com/TeamNewPipe/NewPipe), [RedReader](https://github.com/QuantumBadger/RedReader) and [Squawker](https://github.com/j-fbriere/squawker)
+- **Frontends**: [NewPipe](https://github.com/TeamNewPipe/NewPipe), [Play](https://apps.apple.com/us/app/play-save-videos-watch-later/id1596506190) and [RedReader](https://github.com/QuantumBadger/RedReader)
