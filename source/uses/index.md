@@ -9,16 +9,23 @@ date: 2024-09-11 00:46:52
 - Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
 - [Minisforum V3 Tablet](https://mudkip.me/2024/04/14/A-Brief-Review-of-the-Minisforum-V3-AMD-Tablet/) ([Fedora KDE](https://fedoraproject.org/spins/kde/))
 - iMac M1
+- Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/) & Windows 11)
+	- Intel Core i9-12900
+	- 64GB DDR4 RAM
+	- WD SN770 2TB
+	- Inno3D GeForce RTX 3080
 
 ## Gaming
 
 - [Nintendo Switch OLED](https://www.nintendo.com/us/store/products/nintendo-switch-oled-model-pokemon-scarlet-pokemon-violet/) (Pokémon Scarlet/Violet Edition)
 - Steam Deck LCD 512G
 - PlayStation 5
-- Intel Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/) & Windows 11)
-	- Inno3D GeForce RTX 3080
-	- Xbox Wireless Controller
 - [Ayn Odin 2 Pro](https://www.ayntec.com/products/odin-2)
+- [Anbernic RG35XXSP](https://anbernic.com/products/rg35xxsp) ([muOS](https://muos.dev/))
+- Controllers
+	- Xbox Wireless Controller
+	- GameSir G8 Plus
+	- [8bitdo SF30 Pro](https://www.youtube.com/watch?v=mGqI5yJOsao)
 
 ## Audio
 
@@ -29,7 +36,13 @@ date: 2024-09-11 00:46:52
 
 - [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
 - [Lenovo Y700 2022](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/)
-- iPad Pro 2020
+
+## Peripheral Devices
+
+- Magic Keyboard & Magic Trackpad
+- HHKB Type-S ([YDKB BLE Mod](https://ydkb.io/help/#/en/keyboards/hhkb-ble))
+- Logitech MX Master 3S
+- LG 27UL850 Monitor
 
 ## [Homelab](https://mudkip.me/2024/01/31/My-2023-Homelab-Setup/)
 
@@ -59,7 +72,7 @@ date: 2024-09-11 00:46:52
 - **Password Manager**: [Bitwarden](https://bitwarden.com/)
 - Mastodon Clients
 	- **iOS/macOS**: [Mona](https://geo.itunes.apple.com/app/id1659154653)
-	- **Android**: [Pachli](https://f-droid.org/packages/app.pachli/)
+	- **Android**: [Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)
 	- **Linux**: [Tokodon](https://apps.kde.org/tokodon/)
 - Lemmy Clients
 	- **iOS**: [Voyager](https://apps.apple.com/us/app/voyager-for-lemmy/id6451429762)
@@ -96,5 +109,5 @@ date: 2024-09-11 00:46:52
 	- **Linux**: [Kasts](https://apps.kde.org/kasts/)
 - **Community**: Discord
 - **Researching**: [Zotero](https://www.zotero.org/)
-- **Reading**: Apple Books, Play Books and WeRead
-- **Frontends**: [NewPipe](https://github.com/TeamNewPipe/NewPipe), [Play](https://apps.apple.com/us/app/play-save-videos-watch-later/id1596506190) and [RedReader](https://github.com/QuantumBadger/RedReader)
+- **Reading**: Apple Books, [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp) and WeRead
+- **Frontends**: [NewPipe](https://github.com/TeamNewPipe/NewPipe) and [RedReader](https://github.com/QuantumBadger/RedReader)
