@@ -7,7 +7,6 @@ date: 2024-09-11 00:46:52
 
 - iPhone 12 Pro
 - Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
-- [Minisforum V3 Tablet](https://mudkip.me/2024/04/14/A-Brief-Review-of-the-Minisforum-V3-AMD-Tablet/) ([Fedora KDE](https://fedoraproject.org/spins/kde/))
 - iMac M1
 - Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/) & Windows 11)
 	- Intel Core i9-12900
@@ -25,7 +24,6 @@ date: 2024-09-11 00:46:52
 - Controllers
 	- Xbox Wireless Controller
 	- GameSir G8 Plus
-	- [8bitdo SF30 Pro](https://www.youtube.com/watch?v=mGqI5yJOsao)
 
 ## Audio
 
@@ -34,8 +32,8 @@ date: 2024-09-11 00:46:52
 
 ## Reading / Watching
 
+- [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
 - [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
-- [Lenovo Y700 2022](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/)
 
 ## Peripheral Devices
 
@@ -52,7 +50,7 @@ date: 2024-09-11 00:46:52
 
 ## Programming
 
-- **Golang, TypeScript and others**: Visual Studio Code
+- **Golang, TypeScript and Others**: Visual Studio Code
 - **Swift**: Xcode
 - **Kotlin**: Android Studio
 - **Git Service**: [Forgejo](https://forgejo.org/) and GitHub
@@ -62,14 +60,16 @@ date: 2024-09-11 00:46:52
     - **macOS**: [iTerm2](https://iterm2.com/)
     - **iOS**: [ShellFish](https://shellfishapp.com/)
 
-## Apps
+## Apps and Services
 
 - Browser
 	- **Linux/macOS**: [Firefox](https://www.mozilla.org/en-US/firefox/)
 	- **iOS**: Safari
 	- **Android**: [Vanadium](https://github.com/GrapheneOS/Vanadium) and [Cromite](https://github.com/uazo/cromite)
 - **Note-Taking**: [Obsidian](https://obsidian.md/) and [Moe Memos](https://memos.moe/)
-- **Password Manager**: [Bitwarden](https://bitwarden.com/)
+- Password Manager
+	- **Self-hosted**: [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
+	- **Client**: [Bitwarden](https://bitwarden.com/)
 - Mastodon Clients
 	- **iOS/macOS**: [Mona](https://geo.itunes.apple.com/app/id1659154653)
 	- **Android**: [Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)
@@ -78,36 +78,49 @@ date: 2024-09-11 00:46:52
 	- **iOS**: [Voyager](https://apps.apple.com/us/app/voyager-for-lemmy/id6451429762)
 	- **Android**: [Jerboa](https://f-droid.org/en/packages/com.jerboa/)
 - Mail
+	- **Service**: Fastmail
 	- **iOS/macOS**: Apple Mail
 	- **Android/Linux**: [Thunderbird](https://www.thunderbird.net/)
+- File Management
+	- **iOS**: Files and [FileBrowser Professional](https://apps.apple.com/us/app/filebrowser-professional/id854618029)
+	- **Android**: [Material Files](https://f-droid.org/packages/me.zhanghai.android.files/)
 - Music
-	- **Streaming**: Spotify
-	- **Library**: [Finamp](https://github.com/jmshrv/finamp) and [Stream Music](https://apps.apple.com/us/app/stream-music-enjoy-music/id6449966496)
+	- **Service**: Spotify
+	- **Self-hosted**: [Jellyfin](https://jellyfin.org/)
+	- **Clients**: [Finamp](https://github.com/jmshrv/finamp) and [Stream Music](https://apps.apple.com/us/app/stream-music-enjoy-music/id6449966496)
 - Video
-	- **iOS**: [Swiftfin](https://apps.apple.com/us/app/swiftfin/id1604098728) and [Fileball](https://apps.apple.com/us/app/fileball/id1558391784)
-	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid) and [VLC](https://f-droid.org/en/packages/org.videolan.vlc/)
+	- **Self-hosted**: Jellyfin
+	- **iOS**: [Fileball](https://apps.apple.com/us/app/fileball/id1558391784)
+	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid), [VLC](https://f-droid.org/en/packages/org.videolan.vlc/) and [NewPipe](https://github.com/TeamNewPipe/NewPipe)
+	- **macOS**: [IINA](https://iina.io/)
 - Media Trackers
 	- **iOS/macOS**: [Sequel](https://apps.apple.com/us/app/sequel-media-tracker/id1630746993)
 	- **Android**: [Showly](https://github.com/michaldrabik/showly-2.0)
-- **Read Later**: [Wallabag](https://wallabag.org/) and [frigoligo](https://github.com/casimir/frigoligo)
+- Read Later
+	- **Self-hosted**: [Wallabag](https://wallabag.org/)
+	- **Client**: [frigoligo](https://github.com/casimir/frigoligo)
 - RSS
+	- **Self-hosted**: [Miniflux](https://github.com/miniflux/v2)
 	- **iOS/macOS**: [Reeder Classic](https://reeder.app/classic/)
 	- **Android**: [FocusReader](https://play.google.com/store/apps/details?id=allen.town.focus.reader)
-- **File syncing**: [Nextcloud](https://nextcloud.com/)
+- **File Syncing**: [Nextcloud](https://nextcloud.com/) and [Syncthing](https://syncthing.net/)
 - **Local Transfer**: [KDE Connect](https://kdeconnect.kde.org/)
 - Task Management
-	- **iOS/macOS**: Reminders
-	- **Android**: [Tasks.org](https://tasks.org/)
-	- **Linux**: [Merkuro Calendar](https://apps.kde.org/merkuro.calendar/)
+	- **Self-hosted**: Nextcloud Tasks
+	- **Clients**: Reminders, [Tasks.org](https://tasks.org/) and [Merkuro Calendar](https://apps.kde.org/merkuro.calendar/)
 - Calendar
-	- **iOS/macOS**: Apple Calendar
-	- **Android**: [Etar](https://f-droid.org/packages/ws.xsoh.etar/)
-	- **Linux**: Merkuro Calendar
+	- **Self-hosted**: Nextcloud Calendar
+	- **Clients**: Apple Calendar, [Etar](https://f-droid.org/packages/ws.xsoh.etar/) and Merkuro Calendar
 - Podcasts
 	- **iOS**: Apple Podcasts
 	- **Android**: [AntennaPod](https://antennapod.org/)
 	- **Linux**: [Kasts](https://apps.kde.org/kasts/)
 - **Community**: Discord
 - **Researching**: [Zotero](https://www.zotero.org/)
-- **Reading**: Apple Books, [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp) and WeRead
-- **Frontends**: [NewPipe](https://github.com/TeamNewPipe/NewPipe) and [RedReader](https://github.com/QuantumBadger/RedReader)
+- Reading
+	- **Service**: WeRead
+	- **Self-hosted**: [Calibre-Web](https://github.com/janeczku/calibre-web)
+	- **Clients**: Apple Books and [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp)
+- Artificial Intelligence
+	- **Services**: ChatGPT Plus, Doubao and GitHub Copilot
+	- **Self-hosted**: [Ollama](https://ollama.com/) and [Open WebUI](https://github.com/open-webui/open-webui)
