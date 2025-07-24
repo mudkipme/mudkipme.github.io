@@ -9,27 +9,19 @@ date: 2024-09-11 00:46:52
 - Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
 - iMac M1
 - Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/))
-
-## Gaming
-
-- [Nintendo Switch OLED](https://www.nintendo.com/us/store/products/nintendo-switch-oled-model-pokemon-scarlet-pokemon-violet/) (Pokémon Scarlet/Violet Edition)
-- Steam Deck LCD 512G
-- PlayStation 5
-- [Ayn Odin 2 Pro](https://www.ayntec.com/products/odin-2)
-- [Anbernic RG35XXSP](https://anbernic.com/products/rg35xxsp) ([muOS](https://muos.dev/))
-- Controllers
+	- PowerColor Reaper RX 9070 XT
 	- Xbox Wireless Controller
+- [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
 	- GameSir G8 Plus
+- Nintendo Switch 2
+- PlayStation 5
+- Retroid Pocket Flip 2
+- [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
 
 ## Audio
 
 - AirPods Pro 2 (USB-C)
 - [FiiO FF5](https://www.fiio.com/FF5) + [KA1](https://www.fiio.com/ka1)
-
-## Reading / Watching
-
-- [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
-- [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
 
 ## Peripheral Devices
 
@@ -117,6 +109,7 @@ date: 2024-09-11 00:46:52
 	- **Service**: WeRead
 	- **Self-hosted**: [Calibre-Web](https://github.com/janeczku/calibre-web)
 	- **Clients**: Apple Books and [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp)
+- **Game Streaming**: [Sunshine](https://github.com/LizardByte/Sunshine) and [Moonlight](https://github.com/moonlight-stream/moonlight-android)
 - Artificial Intelligence
-	- **Services**: DeepSeek, Gemini, Doubao and GitHub Copilot
+	- **Services**: DeepSeek, Gemini, ChatGPT and GitHub Copilot
 	- **Self-hosted**: [Ollama](https://ollama.com/) and [Open WebUI](https://github.com/open-webui/open-webui)
