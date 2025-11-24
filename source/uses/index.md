@@ -13,10 +13,14 @@ date: 2024-09-11 00:46:52
 	- Xbox Wireless Controller
 - [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
 	- GameSir G8 Plus
-- Nintendo Switch 2
-- PlayStation 5
-- Retroid Pocket Flip 2
 - [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
+
+## Video Games
+
+- Nintendo Switch 2
+- Ayn Thor
+- Steam Deck OLED
+- PlayStation 5
 
 ## Audio
 
@@ -25,10 +29,10 @@ date: 2024-09-11 00:46:52
 
 ## Peripheral Devices
 
+- MSI MPG 272URX QD-OLED
 - Magic Keyboard & Magic Trackpad
 - HHKB Type-S ([YDKB BLE Mod](https://ydkb.io/help/#/en/keyboards/hhkb-ble))
 - Logitech MX Master 3S
-- LG 27UL850 Monitor
 
 ## [Homelab](https://mudkip.me/2024/01/31/My-2023-Homelab-Setup/)
 
@@ -62,9 +66,7 @@ date: 2024-09-11 00:46:52
 	- **iOS/macOS**: [Mona](https://geo.itunes.apple.com/app/id1659154653)
 	- **Android**: [Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)
 	- **Linux**: [Tokodon](https://apps.kde.org/tokodon/)
-- Lemmy Clients
-	- **iOS**: [Voyager](https://apps.apple.com/app/voyager-for-lemmy/id6451429762)
-	- **Android**: [Jerboa](https://f-droid.org/en/packages/com.jerboa/)
+- **PieFed**: [Voyager](https://getvoyager.app/)
 - Mail
 	- **Service**: Fastmail
 	- **iOS/macOS**: Apple Mail
@@ -73,24 +75,23 @@ date: 2024-09-11 00:46:52
 	- **iOS**: Files and [FileBrowser Professional](https://apps.apple.com/app/filebrowser-professional/id854618029)
 	- **Android**: [Material Files](https://f-droid.org/packages/me.zhanghai.android.files/)
 - Music
-	- **Service**: Spotify
-	- **Self-hosted**: [Jellyfin](https://jellyfin.org/)
-	- **Clients**: [Finamp](https://github.com/jmshrv/finamp) and [Stream Music](https://apps.apple.com/app/stream-music-enjoy-music/id6449966496)
+	- **Service**: NetEase Cloud Music
+	- **Self-hosted**: [Navidrome](https://github.com/navidrome/navidrome) and Plex
+	- **Clients**: [Tempus](https://github.com/eddyizm/tempus), [Musiver](https://apps.apple.com/app/musiver-enjoy-music/id6449966496) and Plexamp
 - Video
-	- **Self-hosted**: Jellyfin
+	- **Self-hosted**: Jellyfin and Plex
 	- **iOS**: [Filebar](https://apps.apple.com/app/filebar-media-player/id1558391784)
 	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid), [VLC](https://f-droid.org/en/packages/org.videolan.vlc/) and [NewPipe](https://github.com/TeamNewPipe/NewPipe)
 	- **macOS**: [IINA](https://iina.io/)
-- Media Trackers
-	- **iOS/macOS**: [Sequel](https://apps.apple.com/app/sequel-media-tracker/id1630746993)
-	- **Android**: [Showly](https://github.com/michaldrabik/showly-2.0)
+	- **Linux**: [Haruna](https://apps.kde.org/haruna/)
+- **Media Trackers**: [Showly](https://github.com/michaldrabik/showly)
 - Read Later
 	- **Self-hosted**: [Wallabag](https://wallabag.org/)
 	- **Client**: [frigoligo](https://github.com/casimir/frigoligo)
 - RSS
 	- **Self-hosted**: [Miniflux](https://github.com/miniflux/v2)
 	- **iOS/macOS**: [Reeder Classic](https://reeder.app/classic/)
-	- **Android**: [FocusReader](https://play.google.com/store/apps/details?id=allen.town.focus.reader)
+	- **Android**: [Capy Reader](https://github.com/jocmp/capyreader)
 - **File Syncing**: [Nextcloud](https://nextcloud.com/) and [Syncthing](https://syncthing.net/)
 - **Local Transfer**: [KDE Connect](https://kdeconnect.kde.org/)
 - Task Management
@@ -109,7 +110,8 @@ date: 2024-09-11 00:46:52
 	- **Service**: WeRead
 	- **Self-hosted**: [Calibre-Web](https://github.com/janeczku/calibre-web)
 	- **Clients**: Apple Books and [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp)
-- **Game Streaming**: [Sunshine](https://github.com/LizardByte/Sunshine) and [Moonlight](https://github.com/moonlight-stream/moonlight-android)
+- **Game Streaming**: [Sunshine](https://github.com/LizardByte/Sunshine), [Apollo](https://github.com/ClassicOldSong/Apollo) and [Moonlight](https://github.com/moonlight-stream/moonlight-android)
 - Artificial Intelligence
-	- **Services**: DeepSeek, Gemini, ChatGPT and GitHub Copilot
+	- **Services**: Doubao, Gemini and GitHub Copilot
 	- **Self-hosted**: [Ollama](https://ollama.com/) and [Open WebUI](https://github.com/open-webui/open-webui)
+	- **Clients**: [Cherry Studio](https://github.com/CherryHQ/cherry-studio)
