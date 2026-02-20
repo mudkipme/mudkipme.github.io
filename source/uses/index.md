@@ -6,11 +6,12 @@ date: 2024-09-11 00:46:52
 ## Daily Drivers
 
 - iPhone 16
-- Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
-- iMac M1
+- MacBook Air M4
 - Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/))
 	- PowerColor Reaper RX 9070 XT
 	- Xbox Wireless Controller
+- iMac M1
+- Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
 - [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
 	- GameSir G8 Plus
 - [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
@@ -18,8 +19,8 @@ date: 2024-09-11 00:46:52
 ## Video Games
 
 - Nintendo Switch 2
-- Ayn Thor
 - Steam Deck OLED
+- Ayn Thor
 - PlayStation 5
 
 ## Audio
@@ -30,26 +31,26 @@ date: 2024-09-11 00:46:52
 ## Peripheral Devices
 
 - MSI MPG 272URX QD-OLED
-- Magic Keyboard & Magic Trackpad
 - HHKB Type-S ([YDKB BLE Mod](https://ydkb.io/help/#/en/keyboards/hhkb-ble))
+- Magic Trackpad
 - Logitech MX Master 3S
 
 ## [Homelab](https://mudkip.me/2024/01/31/My-2023-Homelab-Setup/)
 
 - [ASRock DeskMeet B660](https://www.asrock.com/Nettop/Intel/DeskMeet%20B660%20Series/index.asp) ([Proxmox VE](https://www.proxmox.com/en/proxmox-virtual-environment/overview))
+- DIY NAS (Ryzen 7 5825U, JONSBO N2, OpenMediaVault)
 - Synology DS1621+
 - [iKoolCore R1 Pro](https://www.ikoolcore.com/products/ikoolcore-r1-pro) (Proxmox VE)
 
 ## Programming
 
-- **Golang, TypeScript and Others**: Visual Studio Code
-- **Swift**: Xcode
-- **Kotlin**: Android Studio
+- **IDE**: Visual Studio Code, Xcode and Android Studio
+- **LLM Agents**: Codex, Gemini CLI and [OpenCode](https://opencode.ai/)
 - **Git Service**: [Forgejo](https://forgejo.org/) and GitHub
 - Terminal
     - **Linux**: [Konsole](https://konsole.kde.org/)
+	- **macOS**: [Ghostty](https://ghostty.org/)
     - **Android**: [Termux](https://f-droid.org/en/packages/com.termux/)
-    - **macOS**: [iTerm2](https://iterm2.com/)
     - **iOS**: [ShellFish](https://shellfishapp.com/)
 
 ## Apps and Services
@@ -63,10 +64,10 @@ date: 2024-09-11 00:46:52
 	- **Self-hosted**: [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
 	- **Client**: [Bitwarden](https://bitwarden.com/)
 - Mastodon Clients
-	- **iOS/macOS**: [Mona](https://geo.itunes.apple.com/app/id1659154653)
+	- **iOS/macOS**: [Mona 7](https://apps.apple.com/app/mona-7-for-mastodon/id6755672518)
 	- **Android**: [Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)
 	- **Linux**: [Tokodon](https://apps.kde.org/tokodon/)
-- **PieFed**: [Voyager](https://getvoyager.app/)
+- **PieFed Client**: [Voyager](https://getvoyager.app/)
 - Mail
 	- **Service**: Fastmail
 	- **iOS/macOS**: Apple Mail
@@ -90,7 +91,7 @@ date: 2024-09-11 00:46:52
 	- **Client**: [frigoligo](https://github.com/casimir/frigoligo)
 - RSS
 	- **Self-hosted**: [Miniflux](https://github.com/miniflux/v2)
-	- **iOS/macOS**: [Reeder Classic](https://reeder.app/classic/)
+	- **iOS/macOS**: [NetNewsWire](https://netnewswire.com/)
 	- **Android**: [Capy Reader](https://github.com/jocmp/capyreader)
 - **File Syncing**: [Nextcloud](https://nextcloud.com/) and [Syncthing](https://syncthing.net/)
 - **Local Transfer**: [KDE Connect](https://kdeconnect.kde.org/)
@@ -112,6 +113,6 @@ date: 2024-09-11 00:46:52
 	- **Clients**: Apple Books and [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp)
 - **Game Streaming**: [Sunshine](https://github.com/LizardByte/Sunshine), [Apollo](https://github.com/ClassicOldSong/Apollo) and [Moonlight](https://github.com/moonlight-stream/moonlight-android)
 - Artificial Intelligence
-	- **Services**: Doubao, Gemini and GitHub Copilot
-	- **Self-hosted**: [Ollama](https://ollama.com/) and [Open WebUI](https://github.com/open-webui/open-webui)
+	- **Services**: Gemini, Kimi and MiniMax
+	- **Self-hosted**: [Ollama](https://ollama.com/), [Open WebUI](https://github.com/open-webui/open-webui) and [OpenClaw](https://openclaw.ai/)
 	- **Clients**: [Cherry Studio](https://github.com/CherryHQ/cherry-studio)
