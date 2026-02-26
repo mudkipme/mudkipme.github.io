@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=180">
+  <link rel="icon" type="image/png" sizes="32x32" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=32">
+  <link rel="icon" type="image/png" sizes="16x16" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=16">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mudkip.me","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="I have been using EndeavourOS on my Dragon Canyon NUC for months. It is my chosen Linux distribution because it offers an easy-to-install Arch Linux environment, and I am familiar with Arch Linux. I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes on EndeavourOS">
+<meta property="og:url" content="https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/index.html">
+<meta property="og:site_name" content="Mudkip Mud Sport">
+<meta property="og:description" content="I have been using EndeavourOS on my Dragon Canyon NUC for months. It is my chosen Linux distribution because it offers an easy-to-install Arch Linux environment, and I am familiar with Arch Linux. I">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mudkip.me/images/2024/03/plasma6.png">
+<meta property="article:published_time" content="2024-03-28T00:02:07.000Z">
+<meta property="article:modified_time" content="2026-02-26T10:38:16.268Z">
+<meta property="article:author" content="Mudkip">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mudkip.me/images/2024/03/plasma6.png">
+
+
+<link rel="canonical" href="https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/","path":"2024/03/28/Notes-on-EndeavourOS/","title":"Notes on EndeavourOS"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Notes on EndeavourOS | Mudkip Mud Sport</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><meta name="fediverse:creator" content="@mudkip@indieweb.social"><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Mudkip Mud Sport" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mudkip Mud Sport</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Mudkip's Mud Sport Journal</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-uses"><a href="/uses/" rel="section"><i class="fa fa-computer fa-fw"></i>Uses</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Mudkip</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mudkipme" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mudkipme" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://indieweb.social/@mudkip" title="Mastodon → https:&#x2F;&#x2F;indieweb.social&#x2F;@mudkip" rel="noopener me" target="_blank"><i class="fab fa-mastodon fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mudkip">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Notes on EndeavourOS | Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Notes on EndeavourOS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-03-28 00:02:07" itemprop="dateCreated datePublished" datetime="2024-03-28T00:02:07Z">2024-03-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/images/2024/03/plasma6.png" alt="KDE Plasma 6"></p>
+<p>I have been using <a target="_blank" rel="noopener" href="https://endeavouros.com/">EndeavourOS</a> on my Dragon Canyon NUC for months. It is my chosen Linux distribution because it offers an easy-to-install Arch Linux environment, and I am familiar with Arch Linux. I need to stay on the cutting edge for desktop environments, display protocols, and graphics drivers due to issues with NVIDIA and the Linux desktop (especially Wayland). Many developments are <a target="_blank" rel="noopener" href="https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/967">happening</a> in real-time to improve them. With Arch Linux, I can easily install an AUR package from a merge request, as well as switch to beta drivers when they become <a target="_blank" rel="noopener" href="https://github.com/NVIDIA/egl-wayland/pull/104#issuecomment-2010292221">available</a>.</p>
+<p>Wayland is important to me because I’m using a 27&quot; 4K display. For the best visual size, it should be set to 150% fractional scaling. KDE Plasma supports fractional scaling under Wayland and has an option to “<a target="_blank" rel="noopener" href="https://pointieststick.com/2022/06/17/this-week-in-kde-non-blurry-xwayland-apps/">let Xwayland applications scale themselves</a>” to prevent them from being blurry. That’s the reason I chose KDE as my desktop environment. Moreover, KDE Plasma 6 offers a nice experience both functionally and aesthetically.</p>
+<p>Here is a note in Logseq that I use to track how I install and configure EndeavourOS. I’m interested in a declarative way to build operating systems and am slowly learning NixOS. However, in the meantime, I am very satisfied with my current EndeavourOS setup.</p>
+<hr>
+<ul>
+<li>Configure the Windows Registry to use UTC hardware time:  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reg add &quot;HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation&quot; /v RealTimeIsUniversal /d 1 /t REG_DWORD /f</span><br></pre></td></tr></table></figure>
+</li>
+<li>Disable Secure Boot and Fast Boot in the BIOS. If Fast Boot is enabled, accessing the BIOS by pressing F2 is difficult. Instead, I have to use Settings &gt; System &gt; Recovery &gt; Advanced startup in Windows, and after rebooting, choose Troubleshoot &gt; Advanced options &gt; UEFI Firmware Settings to access the BIOS.</li>
+<li>Flash the EndeavourOS ISO to a USB disk using <a target="_blank" rel="noopener" href="https://rufus.ie/en/">Rufus</a>, contrary to the <a target="_blank" rel="noopener" href="https://discovery.endeavouros.com/installation/create-install-media-usb-key/2021/03/">documentation</a> on the EndeavourOS website. I had to choose the GPT partition and ISO mode to make my PC recognize the boot drive.</li>
+<li>Change network settings in KDE settings: manually set the IP address and DNS and gateway to <code>192.168.1.2</code>.</li>
+<li>Install EndeavourOS using the online installer, KDE desktop environment, erasing the Samsung 970 EVO disk with btrfs and without swap.</li>
+<li>Eject the USB disk and reboot into EndeavourOS.</li>
+<li>Install <code>nvidia-inst</code> using <code>yay</code> and run <code>nvidia-inst</code> to install the GPU driver, then reboot again.</li>
+<li>Disable the Dummy HDMI Plug in Display Settings and set the scale to 150%; turn off Adaptive Sync.</li>
+<li>Fix the suspend issue by preserving video memory <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend">as described here</a>:
+<ul>
+<li><code>sudo nano /etc/modprobe.d/nvidia-power-management.conf</code>
+<ul>
+<li><code>options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/var/tmp</code></li>
+</ul>
+</li>
+<li>sudo systemctl enable nvidia-suspend.service</li>
+<li>sudo systemctl enable nvidia-hibernate.service</li>
+<li>sudo reinstall-kernels</li>
+</ul>
+</li>
+<li>Install the <code>xorg-xwayland-explicit-sync-git</code> and <code>egl-wayland-git</code> AUR packages using <code>yay</code>. This will make Xwayland issues with NVIDIA more manageable.</li>
+<li>Install <code>fcitx5-im</code> and <code>fcitx5-chinese-addons</code> using <code>yay</code>, and select <em>Fcitx 5</em> in System Settings &gt; Keyboard &gt; Virtual Keyboard; add <em>Pinyin</em> as an Input Method.</li>
+<li>Copy <code>.ssh/id_rsa</code>, <code>.ssh/config</code>, and <code>.ssh/id_rsa.pub</code> from Windows on the same device.</li>
+<li>Enable <code>mdns</code> and <code>kdeconnect</code> in the Firewall configuration.</li>
+<li>Configure Firefox:
+<ul>
+<li>Extensions:
+<ul>
+<li>Mainichi</li>
+<li>uBlock Origin</li>
+<li>Bitwarden</li>
+<li>floccus</li>
+</ul>
+</li>
+<li>Always show the bookmark bar.</li>
+<li>Disable Recommend extensions and features as you browse.</li>
+<li>Enable Proxy DNS when using SOCKS v5.</li>
+<li>Disable DNS over HTTPS.</li>
+<li>Disable Ask to save passwords.</li>
+<li>Enable “Tell websites not to sell or share my data” and “Send websites a Do Not Track (DNT) request”.</li>
+<li>Uncheck all checkboxes in Firefox Data Collection and Use.</li>
+<li>Uncheck “Block dangerous and deceptive content”.</li>
+<li>Toggle <code>identity.fxaccounts.enabled</code> to <code>false</code> in <code>about:config</code>.</li>
+<li>Toggle <code>extensions.pocket.enabled</code> to <code>false</code> in <code>about:config</code>.</li>
+<li>Set the homepage to “Blank Page”.</li>
+</ul>
+</li>
+<li>Disable “Show small window previews when hovering over tasks” in task manager options.</li>
+<li>Arch packages installed with <code>pacman</code>:
+<ul>
+<li>flatpak</li>
+<li>thunderbird</li>
+<li>obsidian
+<ul>
+<li>Create <code>.config/obsidian/user-flags.conf</code> with <code>--ozone-platform-hint=wayland --enable-wayland-ime</code>.</li>
+</ul>
+</li>
+<li>bitwarden
+<ul>
+<li>Create <code>.config/electron28-flags.conf</code> with the following content:  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--ozone-platform-hint=wayland</span><br><span class="line">--enable-wayland-ime</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>fastfetch</li>
+<li>docker
+<ul>
+<li>Add the current user to the docker group: <code>sudo usermod -aG docker $USER</code>.</li>
+</ul>
+</li>
+<li>cuda</li>
+<li>libreoffice-fresh
+<ul>
+<li>Create <code>.config/environment.d/env-vars.conf</code> with <code>SAL_USE_VCLPLUGIN=gtk3</code>. This can fix text and icon sizes.</li>
+</ul>
+</li>
+<li>btop</li>
+<li>htop</li>
+<li>bottom</li>
+<li>nvtop</li>
+<li>gst-plugins-qsv</li>
+<li>gst-plugins-bad</li>
+<li>libva-utils</li>
+<li>intel-media-driver</li>
+<li>intel-media-sdk</li>
+<li>intel-gpu-tools</li>
+<li>handbrake</li>
+<li>gimp</li>
+<li>krita</li>
+<li>thunderbird</li>
+<li>kdenlive</li>
+<li>remmina</li>
+<li>freerdp</li>
+<li>discover</li>
+<li>kid3</li>
+<li>merkuro</li>
+<li>zanshin</li>
+<li>tokodon</li>
+<li>kasts</li>
+<li>telegram-desktop</li>
+<li>ttf-jetbrains-mono</li>
+<li>zeal</li>
+<li>kubectl</li>
+<li>kubectx</li>
+<li>zsh</li>
+<li>rustup</li>
+<li>nextcloud-client</li>
+<li>neovim</li>
+<li>tmux</li>
+<li>inkscape</li>
+<li>pastel</li>
+<li>yt-dlp</li>
+<li>k3b</li>
+<li>bat</li>
+<li>dust</li>
+<li>git-delta</li>
+<li>eza</li>
+<li>eva</li>
+<li>fd</li>
+<li>gitui</li>
+<li>glow</li>
+<li>gron</li>
+<li>xh</li>
+<li>pipe-rename</li>
+<li>procs</li>
+<li>yazi</li>
+<li>ttf-hack-nerd</li>
+<li>rclone</li>
+<li>ripgrep</li>
+<li>silicon</li>
+<li>skim</li>
+<li>tokei</li>
+<li>viu</li>
+<li>zellij</li>
+<li>timeshift
+<ul>
+<li>Setup daily btrfs snapshots.</li>
+<li><code>systemctl enable cronie</code>.</li>
+</ul>
+</li>
+<li>nvidia-container-toolkit</li>
+<li>speech-dispatcher</li>
+<li>cmatrix</li>
+</ul>
+</li>
+<li>AUR packages installed with <code>yay</code>:
+<ul>
+<li>logseq-desktop-bin
+<ul>
+<li>Note: Wayland has not been enabled for Logseq due to a bug causing the window to shrink with each start and occasional crashes on close.</li>
+</ul>
+</li>
+<li>visual-studio-code-bin
+<ul>
+<li>Create <code>.config/code-flags.conf</code> with the following content:  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--ozone-platform-hint=wayland</span><br><span class="line">--enable-wayland-ime</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>vlc-git</li>
+<li>xone-dkms</li>
+<li>spotify
+<ul>
+<li>Create <code>.config/spotify-flags.conf</code> with the following content:  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--enable-features=UseOzonePlatform </span><br><span class="line">--ozone-platform=wayland</span><br><span class="line">--enable-wayland-ime</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li>drawio-desktop</li>
+<li>kopia-ui-bin
+<ul>
+<li>Set up daily backups of the home directory.</li>
+</ul>
+</li>
+<li>plex-mpv-shim
+<ul>
+<li>Open TCP 3000 and UDP 32410-32414 ports in firewall settings.</li>
+<li>Set up auto-start in <code>~/.config/systemd/user/plex-mpv-shim.service</code>:  <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Plex MPV Shim Service</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/plex-mpv-shim</span><br><span class="line"><span class="attr">Restart</span>=always</span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">3</span></span><br><span class="line"><span class="attr">Environment</span>=GDK_BACKEND=x11</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=default.target</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl --user daemon-reload</span><br><span class="line">systemctl --user <span class="built_in">enable</span> plex-mpv-shim.service</span><br><span class="line">systemctl --user start plex-mpv-shim.service</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Flatpak apps:
+<ul>
+<li>Ungoogled Chromium
+<ul>
+<li>Create <code>~/.var/app/com.github.Eloston.UngoogledChromium/config/chromium-flags.conf</code> with <code>--ozone-platform-hint=wayland --enable-wayland-ime</code>.</li>
+</ul>
+</li>
+<li>Android Studio</li>
+<li>OpenLens</li>
+<li>DBeaver Community</li>
+<li>Zotero</li>
+<li>Discord</li>
+<li>Plexamp</li>
+<li>Flatseal</li>
+<li>Gear Lever</li>
+</ul>
+</li>
+<li>AppImage apps:
+<ul>
+<li>Insomnia</li>
+</ul>
+</li>
+<li>Configure mpv for hardware decoding: create <code>~/.config/mpv.conf</code> and <code>~/.config/plex-mpv-shim/mpv.conf</code> with <code>hwdec=auto-copy</code>. Additionally, add the command <code>set hwdec auto-copy</code> in Haruna Media Player.</li>
+<li>Install <code>prezto</code>:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">zsh</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> --recursive https://github.com/sorin-ionescu/prezto.git <span class="string">&quot;<span class="variable">$&#123;ZDOTDIR:-<span class="variable">$HOME</span>&#125;</span>/.zprezto&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">setopt</span> EXTENDED_GLOB</span><br><span class="line"><span class="keyword">for</span> rcfile <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$&#123;ZDOTDIR:-<span class="variable">$HOME</span>&#125;</span>&quot;</span>/.zprezto/runcoms/^README.md(.N); <span class="keyword">do</span></span><br><span class="line"><span class="built_in">ln</span> -s <span class="string">&quot;<span class="variable">$rcfile</span>&quot;</span> <span class="string">&quot;<span class="variable">$&#123;ZDOTDIR:-<span class="variable">$HOME</span>&#125;</span>/.<span class="variable">$&#123;rcfile:t&#125;</span>&quot;</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Configure Konsole command to <code>/bin/zsh</code></li>
+<li>Add pmodules in <code>.zpreztorc</code>: <code>git</code>, <code>syntax-highlighting</code>, <code>ssh</code>, <code>tmux</code>, <code>fasd</code> before <code>prompt</code></li>
+</ul>
+</li>
+<li>Install <code>goenv</code>:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/go-nv/goenv.git ~/.goenv</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export GOENV_ROOT=&quot;$HOME/.goenv&quot;&#x27;</span> &gt;&gt; ~/.zshenv</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=&quot;$GOENV_ROOT/bin:$PATH&quot;&#x27;</span> &gt;&gt; ~/.zshenv</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;eval &quot;$(goenv init -)&quot;&#x27;</span> &gt;&gt; ~/.zshrc</span><br><span class="line">goenv install 1.22</span><br></pre></td></tr></table></figure>
+</li>
+<li>Install <code>fnm</code>:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://fnm.vercel.app/install | bash</span><br><span class="line">fnm install 20</span><br></pre></td></tr></table></figure>
+</li>
+<li>Set up the rust toolchain and install some cargo applications:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rustup install stable</span><br><span class="line">cargo install cargo-update</span><br><span class="line">cargo install dtool</span><br><span class="line">cargo install --locked csview</span><br><span class="line">cargo install fclones</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Append <code>export PATH=&quot;$HOME/.local/bin:$HOME/.cargo/bin:$PATH&quot;</code> to <code>.zshrc</code>.</li>
+</ul>
+</li>
+<li>Append aliases to <code>.zshrc</code>:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> comet-core=<span class="string">&quot;ssh comet-core.lan -t &#x27;tmux new-session -A -s main&#x27;&quot;</span></span><br><span class="line"><span class="built_in">alias</span> porygon2=<span class="string">&quot;ssh porygon2.lan -t &#x27;tmux new-session -A -s main&#x27;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">alias</span> vim=<span class="string">&quot;nvim&quot;</span></span><br><span class="line"><span class="built_in">alias</span> vi=<span class="string">&quot;nvim&quot;</span></span><br><span class="line"><span class="built_in">alias</span> vimdiff=<span class="string">&quot;nvim -d&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> EDITOR=<span class="string">&quot;nvim&quot;</span></span><br><span class="line"><span class="built_in">export</span> GIT_EDITOR=<span class="string">&quot;nvim&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>Check that the Intel iGPU works for video encoding: <code>LIBVA_DRIVER_NAME=iHD vainfo --display drm --device /dev/dri/renderD129</code>.</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/" rel="prev" title="Spiritual Successor to the Google Nexus 7">
+                  <i class="fa fa-angle-left"></i> Spiritual Successor to the Google Nexus 7
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/04/14/A-Brief-Review-of-the-Minisforum-V3-AMD-Tablet/" rel="next" title="A Brief Review of the Minisforum V3 AMD Tablet">
+                  A Brief Review of the Minisforum V3 AMD Tablet <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mudkip</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

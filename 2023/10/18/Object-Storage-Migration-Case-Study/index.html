@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=180">
+  <link rel="icon" type="image/png" sizes="32x32" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=32">
+  <link rel="icon" type="image/png" sizes="16x16" href="//gravatar.com/avatar/e8050a565f388a2d35b46a8ed2aa0147?s=16">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"mudkip.me","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Background Hundreds of thousands of image files are stored on 52Poké Wiki. Previously, we used AWS S3 to store all these images, AWS Lambda for image processing (generating thumbnails and converting t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Object Storage Migration Case Study">
+<meta property="og:url" content="https://mudkip.me/2023/10/18/Object-Storage-Migration-Case-Study/index.html">
+<meta property="og:site_name" content="Mudkip Mud Sport">
+<meta property="og:description" content="Background Hundreds of thousands of image files are stored on 52Poké Wiki. Previously, we used AWS S3 to store all these images, AWS Lambda for image processing (generating thumbnails and converting t">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-18T00:21:01.000Z">
+<meta property="article:modified_time" content="2026-02-26T10:38:16.269Z">
+<meta property="article:author" content="Mudkip">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://mudkip.me/2023/10/18/Object-Storage-Migration-Case-Study/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://mudkip.me/2023/10/18/Object-Storage-Migration-Case-Study/","path":"2023/10/18/Object-Storage-Migration-Case-Study/","title":"Object Storage Migration Case Study"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Object Storage Migration Case Study | Mudkip Mud Sport</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.31/dist/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><meta name="fediverse:creator" content="@mudkip@indieweb.social"><!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Mudkip Mud Sport" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Mudkip Mud Sport</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Mudkip's Mud Sport Journal</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-uses"><a href="/uses/" rel="section"><i class="fa fa-computer fa-fw"></i>Uses</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Choice"><span class="nav-number">2.</span> <span class="nav-text">Choice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps"><span class="nav-number">3.</span> <span class="nav-text">Steps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Creating-a-Bucket-on-Linode-and-Setting-Up-the-Bucket-Policy"><span class="nav-number">3.1.</span> <span class="nav-text">Creating a Bucket on Linode and Setting Up the Bucket Policy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-Migration"><span class="nav-number">3.2.</span> <span class="nav-text">Full Migration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disabling-Uploads"><span class="nav-number">3.3.</span> <span class="nav-text">Disabling Uploads</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Incremental-Migration"><span class="nav-number">3.4.</span> <span class="nav-text">Incremental Migration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Updating-Malasada"><span class="nav-number">3.5.</span> <span class="nav-text">Updating Malasada</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuring-Nginx"><span class="nav-number">3.6.</span> <span class="nav-text">Configuring Nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuring-MediaWiki"><span class="nav-number">3.7.</span> <span class="nav-text">Configuring MediaWiki</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Configuring-WordPress"><span class="nav-number">3.8.</span> <span class="nav-text">Configuring WordPress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Backup"><span class="nav-number">3.9.</span> <span class="nav-text">Backup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Mudkip</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mudkipme" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mudkipme" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://indieweb.social/@mudkip" title="Mastodon → https:&#x2F;&#x2F;indieweb.social&#x2F;@mudkip" rel="noopener me" target="_blank"><i class="fab fa-mastodon fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_nd.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mudkip.me/2023/10/18/Object-Storage-Migration-Case-Study/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mudkip">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Object Storage Migration Case Study | Mudkip Mud Sport">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Object Storage Migration Case Study
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-10-18 00:21:01" itemprop="dateCreated datePublished" datetime="2023-10-18T00:21:01Z">2023-10-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="Background">Background</h2>
+<p>Hundreds of thousands of image files are stored on <a target="_blank" rel="noopener" href="https://52poke.wiki/">52Poké Wiki</a>. Previously, we used AWS S3 to store all these images, AWS Lambda for image processing (generating thumbnails and converting to WebP format), and two layers of cache (a container on Linode and Cloudflare CDN) for image distribution.</p>
+<p>Our monthly AWS bill increased gradually due to the growing number of images and traffic each month. Even with two layers of cache, more than 280GB of traffic defaulted to AWS S3, incurring a $20 expense every month.</p>
+<p>Fortunately, there are many S3-compatible services available at much more competitive prices. We considered switching to Cloudflare R2, Backblaze B2, or Linode Object Storage.</p>
+<h2 id="Choice">Choice</h2>
+<p>Currently, we have 150GB of files. It costs $2.25 every month to store on Cloudflare R2, $0.9 for Backblaze B2, and $5 for Linode Object Storage. Egress traffic charges are zero for all services: Backblaze B2 doesn’t charge for 3x the monthly data stored, Linode uses a traffic pool that sufficiently covers our usage, and Cloudflare never charges for egress bandwidth. If the data storage increases to 250GB, it will cost $3.75 on Cloudflare, $1.5 on Backblaze, and remain $5 on Linode.</p>
+<p>However, since the main services of 52Poké are located in Linode’s Tokyo datacenter, there is significant latency when proxying from the other side of the Pacific Ocean. Linode recently <a target="_blank" rel="noopener" href="https://www.linode.com/blog/linode/core-compute-regions-milan-and-osaka/">announced</a> Object Storage availability in their Osaka datacenter, and with a latency of only 8ms between Tokyo and Osaka, this is an optimal choice performance-wise. We can also eliminate one cache layer (20GB) backed by block storage, saving $2 monthly. Ultimately, by migrating from AWS S3 to Linode Object Storage, we can save $17 every month.</p>
+<h2 id="Steps">Steps</h2>
+<h3 id="Creating-a-Bucket-on-Linode-and-Setting-Up-the-Bucket-Policy">Creating a Bucket on Linode and Setting Up the Bucket Policy</h3>
+<p>We can create an Object Storage bucket in Akamai Cloud Manager with the bucket name <code>media.52poke.com</code>.</p>
+<p>Previously, we configured a bucket policy on S3 to allow access solely from the IP addresses of 52Poké’s cloud servers. While Akamai Cloud Manager doesn’t support direct bucket policy configurations, they can be set up using <code>s3cmd</code> as per <a target="_blank" rel="noopener" href="https://www.linode.com/docs/products/storage/object-storage/guides/bucket-policies/">Linode’s documentation</a>.</p>
+<p>The bucket policy looks like this:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2012-10-17&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Statement&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;Effect&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Allow&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Principal&quot;</span><span class="punctuation">:</span> <span class="string">&quot;*&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Action&quot;</span><span class="punctuation">:</span> <span class="string">&quot;s3:GetObject&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Resource&quot;</span><span class="punctuation">:</span> <span class="string">&quot;arn:aws:s3:::media.52poke.com/*&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;Condition&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;IpAddress&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;aws:SourceIp&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                        <span class="string">&quot;...&quot;</span></span><br><span class="line">                    <span class="punctuation">]</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Full-Migration">Full Migration</h3>
+<p>To minimize disruption to 52Poké Wiki during this migration, we’ll implement a two-step mechanism. First, we’ll migrate all files from the AWS S3 bucket and allow users to upload or update files. Later, we’ll conduct an incremental migration, which should take considerably less time.</p>
+<p>A Kubernetes job will be used to run <code>rclone sync</code> to sync all files to the new Linode Object Storage bucket. For the access key ID and secret access key of Linode Object Storage, we’ll use <a target="_blank" rel="noopener" href="https://fluxcd.io/flux/guides/mozilla-sops/">SOPS</a> to encrypt and store them in the Git repository. These can then only be decrypted with the private key in the 52Poké Kubernetes cluster and deployed automatically.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">batch/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Job</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">migrate-media</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">default</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">ttlSecondsAfterFinished:</span> <span class="number">100</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">command:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">/bin/sh</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">-c</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">rclone</span> <span class="string">sync</span> <span class="string">awss3:media.52poke.com</span> <span class="string">los:media.52poke.com</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_AWSS3_TYPE</span></span><br><span class="line">          <span class="attr">value:</span> <span class="string">s3</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_AWSS3_ACCESS_KEY_ID</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">secretKeyRef:</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">accessKeyID</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">aws-s3</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_AWSS3_SECRET_ACCESS_KEY</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">secretKeyRef:</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">secretAccessKey</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">aws-s3</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_LOS_TYPE</span></span><br><span class="line">          <span class="attr">value:</span> <span class="string">s3</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_LOS_ACCESS_KEY_ID</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">secretKeyRef:</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">accessKeyID</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">linode-object-storage</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_LOS_SECRET_ACCESS_KEY</span></span><br><span class="line">          <span class="attr">valueFrom:</span></span><br><span class="line">            <span class="attr">secretKeyRef:</span></span><br><span class="line">              <span class="attr">key:</span> <span class="string">secretAccessKey</span></span><br><span class="line">              <span class="attr">name:</span> <span class="string">linode-object-storage</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_LOS_ENDPOINT</span></span><br><span class="line">          <span class="attr">value:</span> <span class="string">jp-osa-1.linodeobjects.com</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">rclone/rclone:latest</span></span><br><span class="line">        <span class="attr">imagePullPolicy:</span> <span class="string">Always</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">migrate-media</span></span><br><span class="line">      <span class="attr">restartPolicy:</span> <span class="string">Never</span></span><br></pre></td></tr></table></figure>
+<h3 id="Disabling-Uploads">Disabling Uploads</h3>
+<p>In the second step, we must disable uploads on MediaWiki to prevent data loss. This can be configured via <code>LocalSettings.php</code>.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wgEnableUploads</span> = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="Incremental-Migration">Incremental Migration</h3>
+<p>We’ll now run the Kubernetes job again to sync updates from the old AWS S3 bucket to the new one. Additionally, we’ll manually check that recently uploaded files from 52Poké Wiki have been synced to the new bucket.</p>
+<h3 id="Updating-Malasada">Updating Malasada</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/mudkipme/malasada">Malasada</a> is an AWS Lambda Serverless function designed to generate image thumbnails and convert images to the WebP format to conserve bandwidth.</p>
+<p>Previously, we used an IAM policy to grant the Serverless function access to the S3 bucket. Now, with the shift from AWS S3, we’ll need to manually provide the access key ID, secret access key, and the endpoint of Linode Object Storage to the Serverless function using environment variables.</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s3 = <span class="keyword">new</span> <span class="title function_">S3</span>(&#123;</span><br><span class="line">    <span class="attr">credentials</span>: &#123;</span><br><span class="line">        <span class="attr">accessKeyId</span>: process.<span class="property">env</span>.<span class="property">S3_ACCESS_KEY_ID</span>,</span><br><span class="line">        <span class="attr">secretAccessKey</span>: process.<span class="property">env</span>.<span class="property">S3_SECRET_ACCESS_KEY</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">endpoint</span>: process.<span class="property">env</span>.<span class="property">S3_ENDPOINT</span>,</span><br><span class="line">    <span class="attr">region</span>: process.<span class="property">env</span>.<span class="property">S3_REGION</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Configuring-Nginx">Configuring Nginx</h3>
+<p>The Nginx configuration for the domains <code>media.52poke.com</code>, <code>s0.52poke.wiki</code>, and <code>s1.52poke.wiki</code> must be updated to replace the AWS S3 domain with that of Linode Object Storage. We also removed the persistent volume claim backed by block storage from the nginx deployment.</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">proxy_pass</span> http://media.52poke.com.jp-osa-1.linodeobjects.com<span class="variable">$request_uri</span>;</span><br></pre></td></tr></table></figure>
+<p>After updating the nginx configuration, we noticed all requests were failing due to permission issues. However, there was no issue when requesting the upstream Object Storage URL with <code>curl</code> in the nginx container.</p>
+<p>Upon further investigation, we determined that Linode Object Storage was blocking requests containing “X-Forwarded-For” and “X-Real-IP” headers because these headers didn’t align with the bucket policy. Removing these headers from the request resolved the issue.</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">proxy_set_header</span> X-Real-IP <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="string">&#x27;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="Configuring-MediaWiki">Configuring MediaWiki</h3>
+<p>We now need to adjust the <a target="_blank" rel="noopener" href="https://github.com/edwardspec/mediawiki-aws-s3">AWS S3 MediaWiki extension</a> to use Linode Object Storage instead of AWS S3. This adjustment can be quickly made via the <code>endpoint</code> parameter. Afterward, we can re-enable file uploading on MediaWiki.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$wgFileBackends</span>[<span class="string">&#x27;s3&#x27;</span>][<span class="string">&#x27;endpoint&#x27;</span>] = <span class="string">&#x27;http://jp-osa-1.linodeobjects.com&#x27;</span>;</span><br><span class="line"><span class="variable">$wgEnableUploads</span> = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="Configuring-WordPress">Configuring WordPress</h3>
+<p>The 52Poké homepage uses the <a target="_blank" rel="noopener" href="https://wordpress.org/plugins/amazon-s3-and-cloudfront/">WP Offload Media Lite</a> plugin to upload files to S3. While the plugin’s admin page doesn’t offer functionality to change the object storage endpoint, our investigation of the source code revealed hooks that allow modifying the S3 connection configuration. This can be adjusted in <code>wp-config.php</code>.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">add_filter</span>( <span class="string">&#x27;as3cf_aws_s3_client_args&#x27;</span>, function ( <span class="variable">$args</span> ) &#123;</span><br><span class="line">    <span class="variable">$args</span>[<span class="string">&#x27;endpoint&#x27;</span>]               = <span class="string">&#x27;https://jp-osa-1.linodeobjects.com&#x27;</span>;</span><br><span class="line">    <span class="variable">$args</span>[<span class="string">&#x27;region&#x27;</span>]                 = <span class="string">&#x27;jp-osa-1&#x27;</span>;</span><br><span class="line">    <span class="variable">$args</span>[<span class="string">&#x27;use_path_style_endpoint&#x27;</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$args</span>;</span><br><span class="line">&#125; );</span><br><span class="line"><span class="title function_ invoke__">add_filter</span>( <span class="string">&#x27;as3cf_aws_get_regions&#x27;</span>, function ( <span class="variable">$regions</span> ) &#123;</span><br><span class="line">    <span class="variable">$regions</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&#x27;jp-osa-1&#x27;</span> =&gt; <span class="string">&#x27;Osaka&#x27;</span>,</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$regions</span>;</span><br><span class="line">&#125; );</span><br><span class="line"><span class="title function_ invoke__">add_filter</span>( <span class="string">&#x27;as3cf_aws_s3_bucket_in_path&#x27;</span>, <span class="string">&#x27;__return_true&#x27;</span> );</span><br><span class="line"><span class="title function_ invoke__">add_filter</span>( <span class="string">&#x27;as3cf_aws_s3_domain&#x27;</span>, function ( <span class="variable">$domain</span> ) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;linodeobjects.com&#x27;</span>;</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+<h3 id="Backup">Backup</h3>
+<p>As the migration nears completion, it’s important to remember that we have a cron job set up to back up files from AWS S3 to Backblaze B2. We’ll need to update the backup source to Linode Object Storage, which can be achieved through the environment variables of <code>rclone</code>.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">env:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_MEDIA_TYPE</span></span><br><span class="line">  <span class="attr">value:</span> <span class="string">s3</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_MEDIA_ACCESS_KEY_ID</span></span><br><span class="line">  <span class="attr">valueFrom:</span></span><br><span class="line">	<span class="attr">secretKeyRef:</span></span><br><span class="line">	  <span class="attr">key:</span> <span class="string">accessKeyID</span></span><br><span class="line">	  <span class="attr">name:</span> <span class="string">linode-object-storage</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_MEDIA_SECRET_ACCESS_KEY</span></span><br><span class="line">  <span class="attr">valueFrom:</span></span><br><span class="line">	<span class="attr">secretKeyRef:</span></span><br><span class="line">	  <span class="attr">key:</span> <span class="string">secretAccessKey</span></span><br><span class="line">	  <span class="attr">name:</span> <span class="string">linode-object-storage</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">RCLONE_CONFIG_MEDIA_ENDPOINT</span></span><br><span class="line">  <span class="attr">value:</span> <span class="string">jp-osa-1.linodeobjects.com</span></span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion">Conclusion</h2>
+<p>52Poké Wiki successfully transitioned from AWS S3 to Linode Object Storage for image storage. Despite the availability of lower-cost options like Cloudflare R2 and Backblaze B2, Linode Object Storage was the optimal choice given its low latency benefits and the site’s primary services being located in Linode’s Tokyo datacenter. With this change, we anticipates a monthly savings of $17 and enhanced performance. Through a careful migration process, including addressing challenges with permissions and configurations, the transition was executed smoothly. This move underscores the importance of regularly evaluating and optimizing infrastructure choices to ensure both cost-effectiveness and performance for online communities.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/09/Project-Update-2023-Q1/" rel="prev" title="Project Updates (Q1 2023)">
+                  <i class="fa fa-angle-left"></i> Project Updates (Q1 2023)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/01/31/My-2023-Homelab-Setup/" rel="next" title="My 2023 Homelab Setup">
+                  My 2023 Homelab Setup <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Mudkip</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
