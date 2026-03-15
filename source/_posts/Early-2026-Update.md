@@ -8,6 +8,8 @@ The theme of late 2025 to 2026 is building small certainties in a reality of unc
 
 ## New DIY NAS
 
+![Metagross DIY NAS](/images/2026/02/metagross.jpg)
+
 As Synology moves away from the consumer market, blocking 3rd party drives (though the decision was [reverted](https://www.tomshardware.com/pc-components/nas/synology-walks-back-controversial-compatibility-policy-for-2025-nas-units-third-party-hdd-and-ssd-support-returns-with-diskstation-manager-7-3-update)) and dropping support for hardware transcoding even when the hardware supports it, I have been planning to build a new NAS using open-source solutions. The global memory crisis since late 2025 reminded me of my spare 32GB of DDR4 SODIMMs, as well as the 56TB of HDDs from my [backup NAS](https://mudkip.me/2024/01/31/My-2023-Homelab-Setup/).
 
 My rule for the new NAS was simple: it must support DDR4 RAM, and ideally support SODIMM and/or dual-channel (since I have two 16GB DDR4 SODIMMs). My initial choice was the Aoostar WTR Pro 5825U, which seemed like a perfect match. However, multiple users were worried about its power constraints. Because it doesn't support powering up the HDDs sequentially, the boot might fail if all 4 HDDs draw high wattage simultaneously. In the end, I settled on a custom build with a Topton Ryzen 7 5825U Motherboard, a Jonsbo N2 Case, and a Great Wall SFX PSU. I also sold the Synology DS916+ and recouped half of my upgrade expenses.
@@ -25,6 +27,8 @@ Using OMV-Extras, it's easy to have containers and VMs managed right in the Open
 I transferred my data using rsync from the DS1621+ and subsequently set up reverse rsync tasks to back up from the new NAS to the DS1621+. I named my new NAS "metagross.lan" for its massive storage size and computing power.
 
 ## Gaming Devices
+
+![Ayn Thor, playing Kirby's Extra Epic Yarn dumped from my 3DS](/images/2026/02/aynthor.jpg)
 
 I've reshuffled my handheld gaming devices again. They are now the Nintendo Switch 2, Steam Deck OLED, and Ayn Thor.
 
@@ -51,6 +55,8 @@ But honestly, somehow I feel the current labor system should come to an end anyw
 In the end, I respect AI vegetarians, and there are valid reasons to avoid and reject this type of technology, especially when it is controlled by oligarchs. But the world is moving in a direction where this progress can no longer be decelerated, and it is affecting everyone. The alternative might be guiding it to be controlled by the many. The progress of open weight models, which technically can be run by anyone with enough hardware, such as MiniMax 2.5, Kimi 2.5, GLM 5, and Qwen 3.5, is inspiring, and there might be similar hope for [RAM](https://wccftech.com/cxmt-debuts-domestically-produced-ddr5-memory-8000-mtps-lpddr5-10667-mtps/) and other hardware.
 
 ## Trips and Live Concerts
+
+![Roselia Asia Tour - Neuweltfahrt at Zepp Osaka Bayside](/images/2026/02/neuweltfahrt.jpg)
 
 Somehow, over the past few years, anime music events and live concerts had become a weekly normalcy in my city. While I only attended a few, it felt good to be hopeful and always anticipating the next surprise from my favorite seiyuu groups. That all came to an end due to the diplomatic tensions that started in Nov 2025. I went through a kind of despondency but managed to navigate this new reality, and well, with the help of LLMs.
 
