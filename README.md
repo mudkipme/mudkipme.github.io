@@ -1,7 +1,7 @@
 mudkipme.github.io
 ==================
 
-This is the repository for [mudkip.me](https://mudkip.me/) blog, yet another [hexo](https://hexo.io/) installation.
+This is the repository for [mudkip.me](https://mudkip.me/) blog, yet another [hexo](https://hexo.io/) installation. The site is built by GitHub Actions and deployed with GitHub Pages.
 
 ![Build Status](https://github.com/mudkipme/mudkipme.github.io/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
 

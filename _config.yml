@@ -72,13 +72,6 @@ feed:
   limit: 20
   hub:
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  branch: master
-  repo: https://mudkipme:__GITHUB_TOKEN__@github.com/mudkipme/mudkipme.github.io.git
-
 jsonContent:
   meta: false
   pages: false
