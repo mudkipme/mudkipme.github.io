@@ -92,8 +92,8 @@ date: 2026-05-30 00:46:52
 	- **Android/Linux**: [Thunderbird](https://www.thunderbird.net/)
 - File Management
   - **Self-hosted**: [FileBrowser](https://filebrowser.org/) ([Fork with Decompression Support](https://github.com/mudkipme/filebrowser))
-	- **iOS**: Files and [FileBrowser Professional](https://apps.apple.com/app/filebrowser-professional/id854618029)
-	- **Android**: [Material Files](https://f-droid.org/packages/me.zhanghai.android.files/)
+  - **iOS**: Files and [FileBrowser Professional](https://apps.apple.com/app/filebrowser-professional/id854618029)
+  - **Android**: [Material Files](https://f-droid.org/packages/me.zhanghai.android.files/)
 - Music
 	- **Service**: NetEase Cloud Music
 	- **Self-hosted**: [Navidrome](https://github.com/navidrome/navidrome)
@@ -116,10 +116,10 @@ date: 2026-05-30 00:46:52
 - **Local Transfer**: [KDE Connect](https://kdeconnect.kde.org/)
 - Task Management
 	- **Self-hosted**: Nextcloud Tasks
-	- **Clients**: Reminders, [Tasks.org](https://tasks.org/) and [Merkuro Calendar](https://apps.kde.org/merkuro.calendar/)
+	- **Clients**: Reminders, [Tasks.org](https://tasks.org/) and [Planify](https://github.com/alainm23/planify)
 - Calendar
 	- **Self-hosted**: Nextcloud Calendar
-	- **Clients**: Apple Calendar, [Etar](https://f-droid.org/packages/ws.xsoh.etar/) and Merkuro Calendar
+	- **Clients**: Apple Calendar, [Etar](https://f-droid.org/packages/ws.xsoh.etar/) and [Merkuro Calendar](https://apps.kde.org/merkuro.calendar/)
 - Podcasts
 	- **iOS/macOS**: Apple Podcasts
 	- **Android**: [AntennaPod](https://antennapod.org/)
@@ -135,6 +135,8 @@ date: 2026-05-30 00:46:52
   - **Self-hosted**: [SnapOtter](https://snapotter.com/)
   - **macOS**: [Acorn](https://flyingmeat.com/acorn/)
   - **Linux**: [GIMP](https://www.gimp.org/)
+- **Photo Management**: [Immich](https://immich.app/)
+- **Image Clipper**: [Oxibooru](https://github.com/liamw1/oxibooru)
 - Artificial Intelligence
 	- **Services**: Gemini, DeepSeek and ChatGPT
 	- **Self-hosted**: [Building my own harness](https://alejandromp.com/development/blog/have-you-built-an-agent-harness-already/)
