@@ -43,17 +43,6 @@ date: 2026-05-30 00:46:52
 - Synology DS1621+
 - [iKoolCore R1 Pro](https://www.ikoolcore.com/products/ikoolcore-r1-pro) (Proxmox VE)
 
-## Programming
-
-- **IDEs**: [Zed](https://zed.dev/), Visual Studio Code, Xcode and Android Studio
-- **LLM Agents**: Codex, [Pi](https://pi.dev/) and [OpenCode](https://opencode.ai/)
-- **Git Services**: [Forgejo](https://forgejo.org/) and GitHub
-- Terminals
-    - **Linux**: [Konsole](https://konsole.kde.org/)
-    - **macOS**: [Ghostty](https://ghostty.org/)
-    - **Android**: [Termux](https://f-droid.org/en/packages/com.termux/)
-    - **iOS**: [ShellFish](https://shellfishapp.com/)
-
 ## Gaming Software
 
 - Frontends
@@ -78,6 +67,13 @@ date: 2026-05-30 00:46:52
 	- **iOS**: Safari
 	- **Android**: [Vanadium](https://github.com/GrapheneOS/Vanadium) and [Cromite](https://github.com/uazo/cromite)
 - **Note-Taking**: [Obsidian](https://obsidian.md/) and [Moe Memos](https://memos.moe/)
+- **IDEs**: [Zed](https://zed.dev/), Visual Studio Code, Xcode and Android Studio
+- **Git Services**: [Forgejo](https://forgejo.org/) and GitHub
+- Terminals
+    - **Linux**: [Konsole](https://konsole.kde.org/)
+    - **macOS**: [Ghostty](https://ghostty.org/)
+    - **Android**: [Termux](https://f-droid.org/en/packages/com.termux/)
+    - **iOS**: [ShellFish](https://shellfishapp.com/)
 - Password Manager
 	- **Self-hosted**: [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
 	- **Client**: [Bitwarden](https://bitwarden.com/)
@@ -91,7 +87,7 @@ date: 2026-05-30 00:46:52
 	- **iOS/macOS**: Apple Mail
 	- **Android/Linux**: [Thunderbird](https://www.thunderbird.net/)
 - File Management
-  - **Self-hosted**: [FileBrowser](https://filebrowser.org/) ([Fork with Decompression Support](https://github.com/mudkipme/filebrowser))
+  - **Self-hosted**: [FileBrowser Quantum](https://github.com/gtsteffaniak/filebrowser)
   - **iOS**: Files and [FileBrowser Professional](https://apps.apple.com/app/filebrowser-professional/id854618029)
   - **Android**: [Material Files](https://f-droid.org/packages/me.zhanghai.android.files/)
 - Music
@@ -104,7 +100,7 @@ date: 2026-05-30 00:46:52
 	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid), [VLC](https://f-droid.org/en/packages/org.videolan.vlc/) and [NewPipe](https://github.com/TeamNewPipe/NewPipe)
 	- **macOS**: [IINA](https://iina.io/)
 	- **Linux**: [Haruna](https://apps.kde.org/haruna/)
-- **Media Trackers**: Building my own app on top of an Obsidian vault
+- **Media Trackers**: [KizunaShelf](https://mudkip.me/2026/07/16/Introduction-to-KizunaShelf/)
 - Read Later
 	- **Self-hosted**: [Wallabag](https://wallabag.org/)
 	- **Client**: [frigoligo](https://github.com/casimir/frigoligo)
@@ -138,5 +134,5 @@ date: 2026-05-30 00:46:52
 - **Photo Management**: [Immich](https://immich.app/)
 - **Image Clipper**: [Oxibooru](https://github.com/liamw1/oxibooru)
 - Artificial Intelligence
-	- **Services**: Gemini, DeepSeek and ChatGPT
-	- **Self-hosted**: [Building my own harness](https://alejandromp.com/development/blog/have-you-built-an-agent-harness-already/)
+	- **Models**: DeepSeek, GPT, Kimi and Gemini
+	- **Agents**: Codex, [OpenCode](https://opencode.ai/) and [my own harness](https://alejandromp.com/development/blog/have-you-built-an-agent-harness-already/)
