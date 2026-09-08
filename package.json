@@ -23,5 +23,9 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-next": "^8.27.0"
+  },
+  "allowScripts": {
+    "hexo-util@3.3.0": true,
+    "hexo-util@4.0.0": true
   }
 }

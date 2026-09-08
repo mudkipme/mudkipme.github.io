@@ -6,11 +6,11 @@ date: 2026-05-30 00:46:52
 ## Daily Drivers
 
 - iPhone 16
-- MacBook Air M4
+- iMac M1
 - Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/))
 	- PowerColor Reaper RX 9070 XT
 	- Xbox Wireless Controller
-- iMac M1
+- MacBook Air M4
 - Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
 - [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
 	- GameSir G8 Plus
@@ -45,9 +45,7 @@ date: 2026-05-30 00:46:52
 
 ## Gaming Software
 
-- Frontends
-  - **Android**: [Cocoon](https://github.com/inssekt/CocoonFE)
-  - **Linux**: [Heroic Games Launcher](https://heroicgameslauncher.com/)
+- Frontend: [Cocoon](https://github.com/inssekt/CocoonFE)
 - Emulators
   - **3DS**: [Azahar](https://azahar-emu.org/)
   - **Wii U**: [CEMU](https://cemu.info/)
@@ -81,7 +79,6 @@ date: 2026-05-30 00:46:52
 	- **iOS/macOS**: [Mona 7](https://apps.apple.com/app/mona-7-for-mastodon/id6755672518)
 	- **Android**: [Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)
 	- **Linux**: [Tokodon](https://apps.kde.org/tokodon/)
-- **PieFed Client**: [Voyager](https://getvoyager.app/)
 - Mail
 	- **Service**: Fastmail
 	- **iOS/macOS**: Apple Mail
@@ -93,7 +90,7 @@ date: 2026-05-30 00:46:52
 - Music
 	- **Service**: NetEase Cloud Music
 	- **Self-hosted**: [Navidrome](https://github.com/navidrome/navidrome)
-	- **Clients**: [Tempus](https://github.com/eddyizm/tempus) and [Amperfy](https://github.com/BLeeEZ/amperfy)
+	- **Clients**: [Tempus](https://github.com/eddyizm/tempus) and [Arpeggi](https://apps.apple.com/app/arpeggi/id6503619183)
 - Video
 	- **Self-hosted**: Jellyfin
 	- **iOS**: [Swiftfin](https://github.com/jellyfin/Swiftfin) and [Filebar](https://apps.apple.com/app/filebar-media-player/id1558391784)
@@ -101,9 +98,7 @@ date: 2026-05-30 00:46:52
 	- **macOS**: [IINA](https://iina.io/)
 	- **Linux**: [Haruna](https://apps.kde.org/haruna/)
 - **Media Trackers**: [KizunaShelf](https://mudkip.me/2026/07/16/Introduction-to-KizunaShelf/)
-- Read Later
-	- **Self-hosted**: [Wallabag](https://wallabag.org/)
-	- **Client**: [frigoligo](https://github.com/casimir/frigoligo)
+- **Read Later** [Readeck](https://readeck.org/)
 - RSS
 	- **Self-hosted**: [Miniflux](https://github.com/miniflux/v2)
 	- **iOS/macOS**: [NetNewsWire](https://netnewswire.com/)
@@ -134,5 +129,5 @@ date: 2026-05-30 00:46:52
 - **Photo Management**: [Immich](https://immich.app/)
 - **Image Clipper**: [Oxibooru](https://github.com/liamw1/oxibooru)
 - Artificial Intelligence
-	- **Models**: DeepSeek, GPT, Kimi and Gemini
+	- **Models**: DeepSeek, GPT, GLM and Gemini
 	- **Agents**: Codex, [OpenCode](https://opencode.ai/) and [my own harness](https://alejandromp.com/development/blog/have-you-built-an-agent-harness-already/)
