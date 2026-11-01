@@ -9,7 +9,7 @@ date: 2026-05-30 00:46:52
 - iMac M1
 - Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/))
 	- PowerColor Reaper RX 9070 XT
-	- Xbox Wireless Controller
+	- Steam Controller (2026)
 - MacBook Air M4
 - Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
 - [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
@@ -49,10 +49,10 @@ date: 2026-05-30 00:46:52
 - Emulators
   - **3DS**: [Azahar](https://azahar-emu.org/)
   - **Wii U**: [CEMU](https://cemu.info/)
-  - **DS**: [melonDualDS](https://github.com/SapphireRhodonite/melonDS-android)
+  - **DS**: [WatermelonDS](https://github.com/SapphireRhodonite/WatermelonDS)
   - **GC and Wii**: [Dolphin](https://dolphin-emu.org/)
   - **PSP**: [PPSSPP](https://www.ppsspp.org/)
-  - **PS2**: [NetherSX2](https://github.com/Trixarian/NetherSX2-patch)
+  - **PS2**: [ARMSX2](https://github.com/ARMSX2/ARMSX2)
   - **Retro Systems**: [RetroArch](https://www.retroarch.com/)
 - Streaming
   - **PC**: [Sunshine](https://github.com/LizardByte/Sunshine), [Apollo](https://github.com/ClassicOldSong/Apollo) and [Moonlight](https://github.com/moonlight-stream/moonlight-android)
@@ -61,7 +61,7 @@ date: 2026-05-30 00:46:52
 ## Apps and Services
 
 - Browser
-	- **Linux/macOS**: [Firefox](https://www.mozilla.org/en-US/firefox/)
+	- **Linux/macOS**: [Firefox](https://www.mozilla.org/en-US/firefox/) an Chrome
 	- **iOS**: Safari
 	- **Android**: [Vanadium](https://github.com/GrapheneOS/Vanadium) and [Cromite](https://github.com/uazo/cromite)
 - **Note-Taking**: [Obsidian](https://obsidian.md/) and [Moe Memos](https://memos.moe/)
@@ -90,14 +90,14 @@ date: 2026-05-30 00:46:52
 - Music
 	- **Service**: NetEase Cloud Music
 	- **Self-hosted**: [Navidrome](https://github.com/navidrome/navidrome)
-	- **Clients**: [Tempus](https://github.com/eddyizm/tempus) and [Arpeggi](https://apps.apple.com/app/arpeggi/id6503619183)
+	- **Clients**: [Tempus](https://github.com/eddyizm/tempus), [Arpeggi](https://apps.apple.com/app/arpeggi/id6503619183) and [MyGo-CloudMusic](https://music.egoist.dev/)
 - Video
 	- **Self-hosted**: Jellyfin
 	- **iOS**: [Swiftfin](https://github.com/jellyfin/Swiftfin) and [Filebar](https://apps.apple.com/app/filebar-media-player/id1558391784)
 	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid), [VLC](https://f-droid.org/en/packages/org.videolan.vlc/) and [NewPipe](https://github.com/TeamNewPipe/NewPipe)
 	- **macOS**: [IINA](https://iina.io/)
 	- **Linux**: [Haruna](https://apps.kde.org/haruna/)
-- **Media Trackers**: [KizunaShelf](https://mudkip.me/2026/07/16/Introduction-to-KizunaShelf/)
+- **Media Trackers**: [KizunaShelf](https://github.com/mudkipme/kizunashelf/)
 - **Read Later** [Readeck](https://readeck.org/)
 - RSS
 	- **Self-hosted**: [Miniflux](https://github.com/miniflux/v2)
@@ -123,11 +123,11 @@ date: 2026-05-30 00:46:52
 	- **Clients**: Apple Books and [Moon+ Reader Pro](https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp)
 - **Backup**: [Kopia](https://kopia.io/)
 - Image Editing
-  - **Self-hosted**: [SnapOtter](https://snapotter.com/)
-  - **macOS**: [Acorn](https://flyingmeat.com/acorn/)
-  - **Linux**: [GIMP](https://www.gimp.org/)
+	- **Self-hosted**: [SnapOtter](https://snapotter.com/) and [Penpot](https://github.com/penpot/penpot)
+	- **macOS**: [Acorn](https://flyingmeat.com/acorn/)
+	- **Linux**: [GIMP](https://www.gimp.org/)
 - **Photo Management**: [Immich](https://immich.app/)
 - **Image Clipper**: [Oxibooru](https://github.com/liamw1/oxibooru)
 - Artificial Intelligence
-	- **Models**: DeepSeek, GPT, GLM and Gemini
-	- **Agents**: Codex, [OpenCode](https://opencode.ai/) and [my own harness](https://alejandromp.com/development/blog/have-you-built-an-agent-harness-already/)
+	- **Models**: DeepSeek, GPT and Gemini
+	- **Agents**: Codex, [T3 Code](https://t3.codes/) and [Carmel Agent](https://github.com/mudkipme/carmel-agent)
