@@ -10,8 +10,6 @@ date: 2026-05-30 00:46:52
 - Dragon Canyon NUC ([EndeavourOS](https://mudkip.me/2024/03/28/Notes-on-EndeavourOS/))
 	- PowerColor Reaper RX 9070 XT
 	- Steam Controller (2026)
-- MacBook Air M4
-- Google Pixel 6a ([GrapheneOS](https://grapheneos.org/))
 - [Lenovo Legion Y700 2024](https://mudkip.me/2024/02/28/Spiritual-Successor-to-the-Google-Nexus-7/) (Lenovo Legion Tab Gen 3)
 	- GameSir G8 Plus
 - [Sony DPT-RP1 Digital Paper](https://www.sony.com/en/SonyInfo/design/stories/DPT-RP1/)
@@ -20,8 +18,9 @@ date: 2026-05-30 00:46:52
 
 - Nintendo Switch 2
 - Steam Deck OLED
-- Ayn Thor
 - PlayStation 5
+- Ayn Odin 3 Portal
+- Ayn Thor
 
 ## Audio
 
@@ -51,6 +50,7 @@ date: 2026-05-30 00:46:52
   - **Wii U**: [CEMU](https://cemu.info/)
   - **DS**: [WatermelonDS](https://github.com/SapphireRhodonite/WatermelonDS)
   - **GC and Wii**: [Dolphin](https://dolphin-emu.org/)
+  - **PC**: [DroidDeck](https://droid-deck.dev/)
   - **PSP**: [PPSSPP](https://www.ppsspp.org/)
   - **PS2**: [ARMSX2](https://github.com/ARMSX2/ARMSX2)
   - **Retro Systems**: [RetroArch](https://www.retroarch.com/)
@@ -63,7 +63,7 @@ date: 2026-05-30 00:46:52
 - Browser
 	- **Linux/macOS**: [Firefox](https://www.mozilla.org/en-US/firefox/) an Chrome
 	- **iOS**: Safari
-	- **Android**: [Vanadium](https://github.com/GrapheneOS/Vanadium) and [Cromite](https://github.com/uazo/cromite)
+	- **Android**: [Titanium](https://github.com/jqssun/android-titanium-browser)
 - **Note-Taking**: [Obsidian](https://obsidian.md/) and [Moe Memos](https://memos.moe/)
 - **IDEs**: [Zed](https://zed.dev/), Visual Studio Code, Xcode and Android Studio
 - **Git Services**: [Forgejo](https://forgejo.org/) and GitHub
@@ -78,7 +78,7 @@ date: 2026-05-30 00:46:52
 - Mastodon Clients
 	- **iOS/macOS**: [Mona 7](https://apps.apple.com/app/mona-7-for-mastodon/id6755672518)
 	- **Android**: [Tusky](https://f-droid.org/packages/com.keylesspalace.tusky/)
-	- **Linux**: [Tokodon](https://apps.kde.org/tokodon/)
+	- **Linux**: [Tuba](https://tuba.geopjr.dev/)
 - Mail
 	- **Service**: Fastmail
 	- **iOS/macOS**: Apple Mail
@@ -90,14 +90,14 @@ date: 2026-05-30 00:46:52
 - Music
 	- **Service**: NetEase Cloud Music
 	- **Self-hosted**: [Navidrome](https://github.com/navidrome/navidrome)
-	- **Clients**: [Tempus](https://github.com/eddyizm/tempus), [Arpeggi](https://apps.apple.com/app/arpeggi/id6503619183) and [MyGo-CloudMusic](https://music.egoist.dev/)
+	- **Clients**: [Tempus](https://github.com/eddyizm/tempus), [Arpeggi](https://apps.apple.com/app/arpeggi/id6503619183) and [MyGo Music](https://music.egoist.dev/)
 - Video
 	- **Self-hosted**: Jellyfin
 	- **iOS**: [Swiftfin](https://github.com/jellyfin/Swiftfin) and [Filebar](https://apps.apple.com/app/filebar-media-player/id1558391784)
 	- **Android**: [Findroid](https://github.com/jarnedemeulemeester/findroid), [VLC](https://f-droid.org/en/packages/org.videolan.vlc/) and [NewPipe](https://github.com/TeamNewPipe/NewPipe)
 	- **macOS**: [IINA](https://iina.io/)
 	- **Linux**: [Haruna](https://apps.kde.org/haruna/)
-- **Media Trackers**: [KizunaShelf](https://github.com/mudkipme/kizunashelf/)
+- **Media Trackers**: [KizunaShelf](https://kizunashelf.app/)
 - **Read Later** [Readeck](https://readeck.org/)
 - RSS
 	- **Self-hosted**: [Miniflux](https://github.com/miniflux/v2)
@@ -127,7 +127,7 @@ date: 2026-05-30 00:46:52
 	- **macOS**: [Acorn](https://flyingmeat.com/acorn/)
 	- **Linux**: [GIMP](https://www.gimp.org/)
 - **Photo Management**: [Immich](https://immich.app/)
-- **Image Clipper**: [Oxibooru](https://github.com/liamw1/oxibooru)
+- **Image Clipper**: [Oxibooru](https://github.com/liamw1/oxibooru) and [Maibooru](https://maibooru.carmel.works)
 - Artificial Intelligence
 	- **Models**: DeepSeek, GPT and Gemini
-	- **Agents**: Codex, [T3 Code](https://t3.codes/) and [Carmel Agent](https://github.com/mudkipme/carmel-agent)
+	- **Agents**: Antigravity, Codex, [T3 Code](https://t3.codes/) and [Carmel Agent](https://agent.carmel.works/)
